@@ -18,7 +18,7 @@
       className: 'is-sticky',
       wrapperClassName: 'sticky-wrapper',
       center: false,
-      getWidthFrom: '.row'
+      getWidthFrom: '#page'
     },
     $window = $(window),
     $document = $(document),
