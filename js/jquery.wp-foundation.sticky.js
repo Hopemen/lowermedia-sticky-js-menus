@@ -41,6 +41,7 @@
               .css('position', '')
               .css('top', '')
               .css('width', '')
+              .css('margin', '')
               .css('z-index', '');
             s.stickyElement.parent().removeClass(s.className);
             s.currentTop = null;
@@ -58,6 +59,7 @@
             s.stickyElement
               .css('position', 'fixed')
               .css('top', newTop)
+              .css('margin', '0')
               .css('width', '')
               .css('z-index', '1');
 
