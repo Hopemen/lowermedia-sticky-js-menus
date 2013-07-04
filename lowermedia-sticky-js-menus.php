@@ -2,7 +2,7 @@
 /*
 Plugin Name: LowerMedia Sticky.js Menu's
 Plugin URI: http://lowermedia.net
-Description: Pick a menu and make it sticky!
+Description: Activate and make your primary menu sticky!
 Version: 0.0.1
 Stable: 0.0.1
 Author: Pete Lower
