@@ -27,6 +27,8 @@ function lowermedia_add_sticky_js()
 
 	    if ($theme_data['Template']=='responsive'){
 	    	wp_register_script( 'sticky', plugins_url( '/js/jquery.responsive.sticky.js' , __FILE__ ) , array( 'jquery' ), '1.0.0', true);
+	    } else if ($theme_data['Template']=='twentyeleven') {
+	    	wp_register_script( 'sticky', plugins_url( '/js/jquery.twentyeleven.sticky.js' , __FILE__ ) , array( 'jquery' ), '1.0.0', true);
 	    } else {
 	    	wp_register_script( 'sticky', plugins_url( '/js/jquery.sticky.js' , __FILE__ ) , array( 'jquery' ), '1.0.0', true);
 	    }
@@ -39,6 +41,14 @@ function lowermedia_add_sticky_js()
 	}  
 add_action( 'wp_enqueue_scripts', 'lowermedia_add_sticky_js' ); 
 
+function my_wp_nav_menu_args( $args = '' )
+{
+	$args['menu'] = 'primary';
+	$args['container_class'] = 'lowermedia_add_sticky';
+	return $args;
+} // function
+
+add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
 
 // add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
 // function special_nav_class($classes, $item){
@@ -87,15 +97,5 @@ add_action( 'wp_enqueue_scripts', 'lowermedia_add_sticky_js' );
 // 	return 'lowermedia-class';
 // }
 // add_filter('wp_nav_menu_objects','add_menuclass');
-
-
-function my_wp_nav_menu_args( $args = '' )
-{
-	$args['menu'] = 'primary';
-	$args['container_class'] = 'lowermedia_add_sticky';
-	return $args;
-} // function
-
-add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
 
 ?>
