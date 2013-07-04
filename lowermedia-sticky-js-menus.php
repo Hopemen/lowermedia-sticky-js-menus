@@ -20,9 +20,20 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 function lowermedia_add_sticky_js()  
 	{  
+		//collect info about the theme to point to theme specific js files
+		$theme_data = wp_get_theme();
+	    echo 'Theme Title:'.$theme_data['Title'];
+	    echo '<br/>Parent Title:'.$theme_data['Template'];
+
+	    if ($theme_data['Template']=='responsive'){
+	    	wp_register_script( 'sticky', plugins_url( '/js/jquery.responsive.sticky.js' , __FILE__ ) , array( 'jquery' ), '1.0.0', true);
+	    } else {
+	    	wp_register_script( 'sticky', plugins_url( '/js/jquery.sticky.js' , __FILE__ ) , array( 'jquery' ), '1.0.0', true);
+	    }
+
 		// Register and enque sticky.js 
 		// Sticky JS http://www.labs.anthonygarand.com/sticky
-		wp_register_script( 'sticky', plugins_url( '/js/jquery.sticky.js' , __FILE__ ) , array( 'jquery' ), '1.0.0', true);
+		
 		wp_register_script( 'run-sticky', plugins_url( '/js/run-sticky.js' , __FILE__ ), array( 'sticky' ), '1.0.0', true);
 		wp_enqueue_script( 'run-sticky' );
 	}  
@@ -80,6 +91,7 @@ add_action( 'wp_enqueue_scripts', 'lowermedia_add_sticky_js' );
 
 function my_wp_nav_menu_args( $args = '' )
 {
+	$args['menu'] = 'primary';
 	$args['container_class'] = 'lowermedia_add_sticky';
 	return $args;
 } // function

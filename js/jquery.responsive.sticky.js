@@ -10,6 +10,13 @@
 //       It will only set the 'top' and 'position' of your element, you
 //       might need to adjust the width in some cases.
 
+/*
+#
+#   CREATED FOR THE WORDPRESS THEME NAMED: responsive
+#
+#
+*/
+
 (function($) {
   //define a variable named defaults that will hold default css declarations
   var defaults = {
@@ -18,7 +25,7 @@
       className: 'is-sticky',
       wrapperClassName: 'sticky-wrapper',
       center: false,
-      getWidthFrom: ''
+      getWidthFrom: '#header'
     },
     $window = $(window),
     $document = $(document),
