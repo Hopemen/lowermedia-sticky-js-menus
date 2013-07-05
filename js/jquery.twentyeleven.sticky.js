@@ -66,7 +66,7 @@
               .css('position', 'fixed')
               .css('top', newTop)
               .css('width', '')
-              .css('z-index', '1');
+              .css('z-index', '200');
 
             if (typeof s.getWidthFrom !== 'undefined') {
               s.stickyElement.css('width', $(s.getWidthFrom).width());
