@@ -92,4 +92,23 @@ function lowermedia_add_sticky_js()
 	wp_enqueue_script( 'run-sticky' );
 }  
 add_action( 'wp_enqueue_scripts', 'lowermedia_add_sticky_js' ); 
+
+add_filter('plugin_action_links', 'lowermedia_plugin_action_links', 10, 2);
+function lowermedia_plugin_action_links($links, $file) {
+    static $this_plugin;
+
+    if (!$this_plugin) {
+        $this_plugin = plugin_basename(__FILE__);
+    }
+
+    if ($file == $this_plugin) {
+        // The "page" query string value must be equal to the slug
+        // of the Settings admin page we defined earlier, which in
+        // this case equals "myplugin-settings".
+        $settings_link = '<a href="' . get_bloginfo('wpurl') . '/wp-admin/admin.php?page=lowermedia-settings">Settings</a>';
+        array_unshift($links, $settings_link);
+    }
+
+    return $links;
+}
 ?>
