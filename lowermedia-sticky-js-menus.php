@@ -105,7 +105,7 @@ function lowermedia_plugin_action_links($links, $file) {
         // The "page" query string value must be equal to the slug
         // of the Settings admin page we defined earlier, which in
         // this case equals "myplugin-settings".
-        $settings_link = '<a href="' . get_bloginfo('wpurl') . '/wp-admin/admin.php?page=lowermedia-settings">Settings</a>';
+        $settings_link = '<a href="' . get_bloginfo('wpurl') . '/wp-admin/admin.php?page=lowermedia-one-page-theme">Settings</a>';
         array_unshift($links, $settings_link);
     }
 
