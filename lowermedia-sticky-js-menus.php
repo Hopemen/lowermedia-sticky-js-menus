@@ -93,7 +93,14 @@ function lowermedia_add_sticky_js()
 }  
 add_action( 'wp_enqueue_scripts', 'lowermedia_add_sticky_js' ); 
 
+/*############################################################################################
+#
+#   ADD SETTINGS LINK UNDER PLUGIN NAME ON PLUGIN PAGE
+#   
+*/
+
 add_filter('plugin_action_links', 'lowermedia_plugin_action_links', 10, 2);
+
 function lowermedia_plugin_action_links($links, $file) {
     static $this_plugin;
 
