@@ -36,9 +36,6 @@ function lowermedia_add_sticky_js()
 {  
 	//collect info about the theme to point to theme specific js files
 	$theme_data = wp_get_theme();
-    //echo 'Theme Title:'.$theme_data['Title'];
-    //echo '<br/>Parent Title:'.$theme_data['Template'];
-
 
     $supported_themes = array (
     	1=>'twentytwelve',
