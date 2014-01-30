@@ -10,7 +10,29 @@
 //       It will only set the 'top' and 'position' of your element, you
 //       might need to adjust the width in some cases.
 
+
+
 (function($) {
+
+  //var newClass = window.location.href;
+  //newClass = newClass.substring(newClass.lastIndexOf('/')+1, 5);
+  //$('body').addClass(newClass);
+  $('body').addClass('petejsclass');
+  
+  
+  if (LMScriptParams.themename=='responsive')
+  	{
+		var gotwidth = '#header'//CHANGING VARIABLE LINE PER THEME
+	} 
+  else if (LMScriptParams.themename=='twentytwelve' || LMScriptParams.themename=='required-foundation') 
+  	{
+		var gotwidth = '.row';
+	} 
+  else 	//2013, 2011
+  	{
+		var gotwidth =  '#page'//CHANGING VARIABLE LINE PER THEME
+	}
+
   //define a variable named defaults that will hold default css declarations
   var defaults = {
       topSpacing: 0,
@@ -18,7 +40,7 @@
       className: 'is-sticky',
       wrapperClassName: 'sticky-wrapper',
       center: false,
-      getWidthFrom: '#page'
+      getWidthFrom: gotwidth//CHANGING VARIABLE LINE PER THEME
     },
     $window = $(window),
     $document = $(document),
@@ -42,6 +64,11 @@
               .css('top', '')
               .css('width', '')
               .css('z-index', '');
+              
+            if (LMScriptParams.themename=='twentytwelve') {
+              s.stickyElement.css('margin', '');
+            }
+            
             s.stickyElement.parent().removeClass(s.className);
             s.currentTop = null;
           }
@@ -61,11 +88,16 @@
               .css('width', '')
               .css('z-index', '200');
 
+            if (LMScriptParams.themename=='twentytwelve') {
+              s.stickyElement.css('margin', '0');
+            }
+
             if (typeof s.getWidthFrom !== 'undefined') {
               s.stickyElement.css('width', $(s.getWidthFrom).width());
             }
 
             s.stickyElement.parent().addClass(s.className);
+            $('body').addClass('petejsclass-sticky');
             s.currentTop = newTop;
           }
         }
@@ -95,7 +127,11 @@
           }
 
           var stickyWrapper = stickyElement.parent();
-          stickyWrapper.css('height', stickyElement.outerHeight());
+          
+          if (LMScriptParams.themename!='responsive') {
+			stickyWrapper.css('height', stickyElement.outerHeight());//hide if responsive
+		  } 
+          
           sticked.push({
             topSpacing: o.topSpacing,
             bottomSpacing: o.bottomSpacing,
@@ -131,4 +167,7 @@
   $(function() {
     setTimeout(scroller, 0);
   });
+
+  if ($( "#undefined-sticky-wrapper" ).hasClass( "is-sticky" )) {$('body').addClass('petejsclass-is-sticky');}//hide if responsive
+
 })(jQuery);

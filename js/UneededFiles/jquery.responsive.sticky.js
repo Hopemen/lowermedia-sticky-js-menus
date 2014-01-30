@@ -19,6 +19,13 @@
 
 (function($) {
   //define a variable named defaults that will hold default css declarations
+  
+  $('body').addClass('petejsclass-res');
+  
+  if (LMScriptParams.themename=='responsive'){
+	$('body').addClass('PETE-JS-RESPONSIVE');
+  }
+  
   var defaults = {
       topSpacing: 0,
       bottomSpacing: 0,

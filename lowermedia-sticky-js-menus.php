@@ -3,7 +3,7 @@
 Plugin Name: LowerMedia Sticky.js Menu's
 Plugin URI: http://lowermedia.net
 Description: WordPress plugin that integrates sticky.js and makes your primary navigation menu sticky (will 'stick' to top of screen when rolled over).  Activate and make your primary menu sticky!  Sticky means having your navigation always visible, the nav fixes itself to the top of the page.  This plugin uses the <a href='http://stickyjs.com'>Sticky.js</a> script, props and credit for creating that go to <a href="http://anthonygarand.com">Anthony Garand</a>, Thanks Anthony!   
-Version: 1.0.0
+Version: 2.0.0
 Stable: 1.0.0
 Author: Pete Lower
 Author URI: http://petelower.com
@@ -50,34 +50,25 @@ function lowermedia_add_sticky_js()
 	switch ($theme_data['Template'])
 	{
 		case $supported_themes[1]://2012
-			wp_register_script( 'sticky', plugins_url( '/js/jquery.'.$supported_themes[1].'.sticky.js' , __FILE__ ) , array( 'jquery' ), '1.0.0', true);
-			wp_register_script( 'run-sticky', plugins_url( '/js/run-'.$supported_themes[1].'-sticky.js' , __FILE__ ), array( 'sticky' ), '1.0.0', true);
+			//
 		break;
 		case $supported_themes[2]://2011
-			wp_register_script( 'sticky', plugins_url( '/js/jquery.'.$supported_themes[2].'.sticky.js' , __FILE__ ) , array( 'jquery' ), '1.0.0', true);
-			wp_register_script( 'run-sticky', plugins_url( '/js/run-'.$supported_themes[2].'-sticky.js' , __FILE__ ), array( 'sticky' ), '1.0.0', true);
+			//
 		break;
 		case $supported_themes[3]://2010
-			//wp_register_script( 'sticky', plugins_url( '/js/jquery.'.$supported_themes[3].'.sticky.js' , __FILE__ ) , array( 'jquery' ), '1.0.0', true);
-			wp_register_script( 'sticky', plugins_url( '/js/jquery.sticky.js' , __FILE__ ) , array( 'jquery' ), '1.0.0', true);
-			wp_register_script( 'run-sticky', plugins_url( '/js/run-'.$supported_themes[3].'-sticky.js' , __FILE__ ), array( 'sticky' ), '1.0.0', true);
+			//
 		break;
 		case $supported_themes[4]://WP FOUNDATION
-			wp_register_script( 'sticky', plugins_url( '/js/jquery.'.$supported_themes[4].'.sticky.js' , __FILE__ ) , array( 'jquery' ), '1.0.0', true);
-			wp_register_script( 'run-sticky', plugins_url( '/js/run-'.$supported_themes[4].'-sticky.js' , __FILE__ ), array( 'sticky' ), '1.0.0', true);
+			//
 		break;
 		case $supported_themes[5]:// REQUIRED FOUNDATION
-			wp_register_script( 'sticky', plugins_url( '/js/jquery.'.$supported_themes[5].'.sticky.js' , __FILE__ ) , array( 'jquery' ), '1.0.0', true);
-			wp_register_script( 'run-sticky', plugins_url( '/js/run-'.$supported_themes[5].'-sticky.js' , __FILE__ ), array( 'sticky' ), '1.0.0', true);
+			//
 		break;
 		case $supported_themes[6]:// RESPONSIVE
-			wp_register_script( 'sticky', plugins_url( '/js/jquery.'.$supported_themes[6].'.sticky.js' , __FILE__ ) , array( 'jquery' ), '1.0.0', true);
-			wp_register_script( 'run-sticky', plugins_url( '/js/run-'.$supported_themes[6].'-sticky.js' , __FILE__ ), array( 'sticky' ), '1.0.0', true);
+			//
 		break;
 		default:
-			wp_register_script( 'sticky', plugins_url( '/js/jquery.sticky.js' , __FILE__ ) , array( 'jquery' ), '1.0.0', true);
-			wp_register_script( 'run-sticky', plugins_url( '/js/run-sticky.js' , __FILE__ ), array( 'sticky' ), '1.0.0', true);
-			//if we don't know what div to add sticky to we'll assign the primary menu class and add sticky to that
+
 			function my_wp_nav_menu_args( $args = '' )
 			{
 				$args['container'] = 'nav';
@@ -86,7 +77,18 @@ function lowermedia_add_sticky_js()
 			}
 			add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
 	}
+
+	
+	wp_register_script( 'sticky', plugins_url( '/js/jquery.sticky.js' , __FILE__ ) , array( 'jquery' ), '1.0.0', true);
+	wp_register_script( 'run-sticky', plugins_url( '/js/run-sticky.js' , __FILE__ ), array( 'sticky' ), '1.0.0', true);
 	wp_enqueue_script( 'run-sticky' );
+	
+	$params = array(
+	  'themename' => $theme_data['Template']
+	);
+	
+	wp_localize_script( 'sticky', 'LMScriptParams', $params );
+	wp_localize_script( 'run-sticky', 'LMScriptParams', $params );
 }  
 add_action( 'wp_enqueue_scripts', 'lowermedia_add_sticky_js' ); 
 
