@@ -37,46 +37,19 @@ function lowermedia_add_sticky_js()
 	//collect info about the theme to point to theme specific js files
 	$theme_data = wp_get_theme();
 
-    $supported_themes = array (
-    	1=>'twentytwelve',
-    	2=>'twentyeleven',
-    	3=>'twentyten',
-    	4=>'wp-foundation',
-    	5=>'required-foundation',
-    	6=>'responsive',
-	);
-
-    // Register and enque sticky.js - Sticky JS http://www.labs.anthonygarand.com/sticky - Anthony Garand anthonygarand.com
-	switch ($theme_data['Template'])
+	if ($theme_data['Template']!='twentytwelve' && $theme_data['Template']!='twentyeleven' && $theme_data['Template']!='twentyten' && $theme_data['Template']!='wp-foundation' && $theme_data['Template']!='required-foundation' && $theme_data['Template']!='responsive')
 	{
-		case $supported_themes[1]://2012
-			//
-		break;
-		case $supported_themes[2]://2011
-			//
-		break;
-		case $supported_themes[3]://2010
-			//
-		break;
-		case $supported_themes[4]://WP FOUNDATION
-			//
-		break;
-		case $supported_themes[5]:// REQUIRED FOUNDATION
-			//
-		break;
-		case $supported_themes[6]:// RESPONSIVE
-			//
-		break;
-		default:
-
-			function my_wp_nav_menu_args( $args = '' )
+		function my_wp_nav_menu_args( $args = '' )
 			{
 				$args['container'] = 'nav';
 				$args['container_class'] = 'lowermedia_add_sticky';
 				return $args;
 			}
 			add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
+
 	}
+
+    // Register and enque sticky.js - Sticky JS http://www.labs.anthonygarand.com/sticky - Anthony Garand anthonygarand.com
 
 	
 	wp_register_script( 'sticky', plugins_url( '/js/jquery.sticky.js' , __FILE__ ) , array( 'jquery' ), '1.0.0', true);
