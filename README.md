@@ -1,4 +1,4 @@
-<h1>LowerMedia_sticky_js_menus</h1>
+<h1>LowerMedia Sticky.js Menu's</h1>
 ==========================
 
 WordPress plugin that integrates sticky.js and makes your primary navigation menu sticky 
