@@ -26,7 +26,7 @@ Plugins tested to work with this theme work a tad bit differently.  Instead of
 	adding a class it uses custom js files that have the main navigational selectors 
 	already defined.  JS manipulates the menus by using the already defined tags. 
 
-This plugin has been tested on a growing number of themes including:
+This plugin has been tested on a growing number of themes including: (will, in most cases, work on themes other than the following as well)
    twentythirteen, twentytwelve, twentyeleven, responsive, wp-foundation, required-foundation, neuro
 
 
