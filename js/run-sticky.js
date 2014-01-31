@@ -47,7 +47,7 @@ jQuery(document).ready(function(){
     }
   else if (LMScriptParams.themename=='neuro')
     {
-      jQuery("#navigation").sticky({ topSpacing: 0 });// wp-foundation
+      jQuery(".container-fluid").sticky({ topSpacing: 0 });// wp-foundation
     }
   else
     {
