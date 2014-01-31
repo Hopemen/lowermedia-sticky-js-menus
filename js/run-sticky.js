@@ -39,15 +39,19 @@ jQuery(document).ready(function(){
     }
   else if (LMScriptParams.themename=='required-foundation')
     {
-      jQuery("#access").sticky({ topSpacing: 0 });// required-foundation
+      jQuery("#access").sticky({ topSpacing: 0 });//required-foundation
     }
   else if (LMScriptParams.themename=='wp-foundation')
     {
-      jQuery(".top-nav").sticky({ topSpacing: 0 });// wp-foundation
+      jQuery(".top-nav").sticky({ topSpacing: 0 });//wp-foundation
     }
   else if (LMScriptParams.themename=='neuro')
     {
-      jQuery("#navigation_menu").sticky({ topSpacing: 0 });// wp-foundation
+      jQuery("#navigation_menu").sticky({ topSpacing: 0 });//neuro
+    }
+  else if (LMScriptParams.themename=='Swtor_NeozOne_Wp')
+    {
+      jQuery(".art-nav").sticky({ topSpacing: 0 });//Swtor_NeozOne_Wp
     }
   else
     {
