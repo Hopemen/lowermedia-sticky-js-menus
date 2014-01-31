@@ -19,15 +19,15 @@ This plugin uses the <a href='http://stickyjs.com'>Sticky.js</a> script, props a
 More info:
 
 This plugin was designed to work out of the box with a large number of popular themes if not all
-#	the menu container and then manipulating the HTML tag w/ said class by way of JS
-#	
-#
-#	Plugins tested to work with this theme work a tad bit differently.  Instead of 
-#	adding a class it uses custom js files that have the main navigational selectors 
-#	already defined.  JS manipulates the menus by using the already defined tags. 
-#
-#	This plugin has been tested on a growing number of themes including:
-#   twentytwelve, twentyeleven, responsive, wp-foundation, required-foundation
+	the menu container and then manipulating the HTML tag w/ said class by way of JS
+	
+
+Plugins tested to work with this theme work a tad bit differently.  Instead of 
+	adding a class it uses custom js files that have the main navigational selectors 
+	already defined.  JS manipulates the menus by using the already defined tags. 
+
+This plugin has been tested on a growing number of themes including:
+   twentytwelve, twentyeleven, responsive, wp-foundation, required-foundation
 
 
 == Installation ==
