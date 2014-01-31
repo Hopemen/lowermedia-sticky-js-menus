@@ -21,7 +21,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 #	already defined.  JS manipulates the menus by using the already defined tags. 
 #
 #	This plugin has been tested on a growing number of themes including:
-#   twentytwelve, twentyeleven, responsive, wp-foundation, required-foundation
+#   twentytwelve, twentyeleven, responsive, wp-foundation, required-foundation, neuro, Swtor_NeozOne_Wp
 #
 */
 
@@ -38,7 +38,7 @@ function lowermedia_add_sticky_js()
 	$theme_data = wp_get_theme();
 
 	//Some themes have been defined specifically as to what the primary nav wrapper will be, for the themes still in flux we'll add a class to the nav, this class is used in run-sticky.js
-	if ($theme_data['Template']!='twentytwelve' && $theme_data['Template']!='twentyeleven' && $theme_data['Template']!='twentyten' && $theme_data['Template']!='wp-foundation' && $theme_data['Template']!='required-foundation' && $theme_data['Template']!='responsive' && $theme_data['Template']!='neuro')
+	if ($theme_data['Template']!='twentytwelve' && $theme_data['Template']!='twentyeleven' && $theme_data['Template']!='twentyten' && $theme_data['Template']!='wp-foundation' && $theme_data['Template']!='required-foundation' && $theme_data['Template']!='responsive' && $theme_data['Template']!='neuro' && $theme_data['Template']!='Swtor_NeozOne_Wp')
 	{
 		function my_wp_nav_menu_args( $args = '' )
 			{
