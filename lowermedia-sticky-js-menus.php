@@ -38,7 +38,7 @@ function lowermedia_add_sticky_js()
 	$theme_data = wp_get_theme();
 
 	//Some themes have been defined specifically as to what the primary nav wrapper will be, for the themes still in flux we'll add a class to the nav, this class is used in run-sticky.js
-	if ($theme_data['Template']!='twentytwelve' && $theme_data['Template']!='twentyeleven' && $theme_data['Template']!='twentyten' && $theme_data['Template']!='wp-foundation' && $theme_data['Template']!='required-foundation' && $theme_data['Template']!='responsive')
+	if ($theme_data['Template']!='twentytwelve' && $theme_data['Template']!='twentyeleven' && $theme_data['Template']!='twentyten' && $theme_data['Template']!='wp-foundation' && $theme_data['Template']!='required-foundation' && $theme_data['Template']!='responsive' && $theme_data['Template']!='neuro')
 	{
 		function my_wp_nav_menu_args( $args = '' )
 			{
