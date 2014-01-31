@@ -12,12 +12,13 @@ This plugin uses the <a href='http://stickyjs.com'>Sticky.js</a> script, props a
 
 
 <a href='http://lowermedia.net'>LowerMedia.Net</a>
+<a href='http://petelower.com'>Dev'd by Pete</a>
 
 
 
 More info:
 
-This plugin was design to work out of the box with any theme by adding a class to 
+This plugin was designed to work out of the box with a large number of popular themes if not all
 #	the menu container and then manipulating the HTML tag w/ said class by way of JS
 #	
 #
