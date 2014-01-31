@@ -12,7 +12,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 /*############################################################################################
-#	This plugin was design to work out of the box with any theme by adding a class to 
+#	This plugin was designed to work out of the box with any theme by adding a class to 
 #	the menu container and then manipulating the HTML tag w/ said class by way of JS
 #	
 #
@@ -25,11 +25,11 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 #
 */
 
-
 /*############################################################################################
 #
 #   ADD STICKY JS FILES/LIBRARIES(STICKY.JS)
 #   //This function adds sticky javascript libraries and files
+#
 */
 
 function lowermedia_add_sticky_js()  
@@ -46,12 +46,9 @@ function lowermedia_add_sticky_js()
 				return $args;
 			}
 			add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
-
 	}
 
     // Register and enque sticky.js - Sticky JS http://www.labs.anthonygarand.com/sticky - Anthony Garand anthonygarand.com
-
-	
 	wp_register_script( 'sticky', plugins_url( '/js/jquery.sticky.js' , __FILE__ ) , array( 'jquery' ), '1.0.0', true);
 	wp_register_script( 'run-sticky', plugins_url( '/js/run-sticky.js' , __FILE__ ), array( 'sticky' ), '1.0.0', true);
 	wp_enqueue_script( 'run-sticky' );
