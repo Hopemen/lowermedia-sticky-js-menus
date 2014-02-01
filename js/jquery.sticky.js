@@ -74,7 +74,7 @@
             }
 
             if (LMScriptParams.themename=='sixteen') {
-              s.stickyElement.css('margin-left', '-100px');
+              s.stickyElement.css('margin-left', '');
             }
             
             s.stickyElement.parent().removeClass(s.className);
@@ -98,6 +98,10 @@
 
             if (LMScriptParams.themename=='twentytwelve') {
               s.stickyElement.css('margin', '0');
+            }
+
+            if (LMScriptParams.themename=='sixteen') {
+              s.stickyElement.css('margin-left', '-100px');
             }
 
             if (typeof s.getWidthFrom !== 'undefined') {
