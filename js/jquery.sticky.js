@@ -80,6 +80,10 @@
             if (LMScriptParams.themename=='sixteen') {
               s.stickyElement.css('margin-left', '');
             }
+
+            if (LMScriptParams.themename=='destro') {
+              s.stickyElement.css('max-width', '');
+            }
             
             s.stickyElement.parent().removeClass(s.className);
             s.currentTop = null;
@@ -108,8 +112,15 @@
               s.stickyElement.css('margin-left', '-120px');
             }
 
-            if (typeof s.getWidthFrom !== 'undefined') {
-              s.stickyElement.css('width', $(s.getWidthFrom).width());
+            if (LMScriptParams.themename=='destro') {
+              s.stickyElement.css('width', '94%');
+              s.stickyElement.css('max-width', '1122px');
+            } else {
+
+              if (typeof s.getWidthFrom !== 'undefined') {
+                s.stickyElement.css('width', $(s.getWidthFrom).width());
+              }
+
             }
 
             s.stickyElement.parent().addClass(s.className);
