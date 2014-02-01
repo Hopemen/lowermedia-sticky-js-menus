@@ -32,7 +32,11 @@
     {
       gotwidth = '';
     }
-  else//2013, 2011
+  else if (LMScriptParams.themename=='destro')
+    {
+      gotwidth = '#content_section';
+    }
+  else
     {
       gotwidth = '#page';//CHANGING VARIABLE LINE PER THEME
     }
