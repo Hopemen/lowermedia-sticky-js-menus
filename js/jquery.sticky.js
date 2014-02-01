@@ -19,19 +19,23 @@
   //$('body').addClass(newClass);
   $('body').addClass('petejsclass');
   
-  
+  var gotwidth;
   if (LMScriptParams.themename=='responsive')
-  	{
-		var gotwidth = '#header'//CHANGING VARIABLE LINE PER THEME
-	} 
-  else if (LMScriptParams.themename=='twentytwelve' || LMScriptParams.themename=='required-foundation') 
-  	{
-		var gotwidth = '.row';
-	} 
-  else 	//2013, 2011
-  	{
-		var gotwidth =  '#page'//CHANGING VARIABLE LINE PER THEME
-	}
+    {
+      gotwidth = '#header';//CHANGING VARIABLE LINE PER THEME
+    }
+  else if (LMScriptParams.themename=='twentytwelve' || LMScriptParams.themename=='required-foundation')
+    {
+      gotwidth = '.row';
+    }
+  else if (LMScriptParams.themename=='sixteen')
+    {
+      gotwidth = '';
+    }
+  else//2013, 2011
+    {
+      gotwidth = '#page';//CHANGING VARIABLE LINE PER THEME
+    }
 
   //define a variable named defaults that will hold default css declarations
   var defaults = {
