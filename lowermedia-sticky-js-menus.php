@@ -50,7 +50,8 @@ function lowermedia_add_sticky_js()
 		&& $theme_data['Template']!='expound'
 		&& $theme_data['Template']!='sixteen'
 		&& $theme_data['Template']!='destro'
-		&& $theme_data['Template']!='attitude')
+		&& $theme_data['Template']!='attitude'
+		&& $theme_data['Template']!='spun')
 	{
 		function my_wp_nav_menu_args( $args = '' )
 			{

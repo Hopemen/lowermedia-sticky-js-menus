@@ -37,10 +37,6 @@ jQuery(document).ready(function(){
     {
       jQuery("#topbar").sticky({ topSpacing: 0 });//virtue
     }
-  else if (LMScriptParams.themename=='required-foundation')
-    {
-      jQuery("#access").sticky({ topSpacing: 0 });//required-foundation
-    }
   else if (LMScriptParams.themename=='wp-foundation')
     {
       jQuery(".top-nav").sticky({ topSpacing: 0 });//wp-foundation
@@ -57,9 +53,13 @@ jQuery(document).ready(function(){
     {
       jQuery("#menu").sticky({ topSpacing: 0 });//destro
     }
-  else if (LMScriptParams.themename=='attitude')
+  else if (LMScriptParams.themename=='attitude' || LMScriptParams.themename=='required-foundation')
     {
-      jQuery("#access").sticky({ topSpacing: 0 });//destro
+      jQuery("#access").sticky({ topSpacing: 0 });//attitude or required-foundation
+    }
+  else if (LMScriptParams.themename=='spun')
+    {
+      jQuery(".site-navigation").sticky({ topSpacing: 0 });//spun
     }
   else if (LMScriptParams.themename=='lowermedia_one_page_theme' || LMScriptParams.themename=='expound' || LMScriptParams.themename=='sixteen')
     {
