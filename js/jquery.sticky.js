@@ -101,7 +101,7 @@
             }
 
             if (LMScriptParams.themename=='sixteen') {
-              s.stickyElement.css('margin-left', '-100px');
+              s.stickyElement.css('margin-left', '-130px');
             }
 
             if (typeof s.getWidthFrom !== 'undefined') {
