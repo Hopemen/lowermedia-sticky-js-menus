@@ -29,6 +29,8 @@ Plugins tested to work with this theme work a tad bit differently.  Instead of
 This plugin has been tested on a growing number of themes including: (will, in most cases, work on themes other than the following as well)
    twentythirteen, twentytwelve, twentyeleven, responsive, wp-foundation, required-foundation, neuro, Swtor_NeozOne_Wp, lowermedia_one_page_theme, expound, customizr, sixteen, destro, swift basic
 
+   *Some CSS edits may be required
+
 
 == Installation ==
 
