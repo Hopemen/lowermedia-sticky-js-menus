@@ -28,7 +28,7 @@
     {
       gotwidth = '.row';
     }
-  else if (LMScriptParams.themename=='sixteen')
+  else if (LMScriptParams.themename=='sixteen' || LMScriptParams.themename=='spun')
     {
       gotwidth = '';
     }
