@@ -21,7 +21,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 #	already defined.  JS manipulates the menus by using the already defined tags. 
 #
 #	This plugin has been tested on a growing number of themes including:
-#   twentytwelve, twentyeleven, responsive, wp-foundation, required-foundation, neuro, Swtor_NeozOne_Wp, lowermedia_one_page_theme
+#   twentytwelve, twentyeleven, responsive, wp-foundation, required-foundation, neuro, Swtor_NeozOne_Wp, lowermedia_one_page_theme, expound
 #
 */
 
