@@ -47,7 +47,8 @@ function lowermedia_add_sticky_js()
 		&& $theme_data['Template']!='neuro' 
 		&& $theme_data['Template']!='Swtor_NeozOne_Wp' 
 		&& $theme_data['Template']!='lowermedia_one_page_theme'
-		&& $theme_data['Template']!='expound')
+		&& $theme_data['Template']!='expound'
+		&& $theme_data['Template']!='sixteen')
 	{
 		function my_wp_nav_menu_args( $args = '' )
 			{
