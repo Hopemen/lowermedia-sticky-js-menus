@@ -32,6 +32,10 @@
     {
       gotwidth = '';
     }
+  else if (LMScriptParams.themename=='attitude')
+    {
+      gotwidth = '#wrapper';
+    }
   else if (LMScriptParams.themename=='destro')
     {
       gotwidth = '#content_section';
