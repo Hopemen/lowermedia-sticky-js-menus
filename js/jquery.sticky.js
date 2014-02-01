@@ -72,6 +72,10 @@
             if (LMScriptParams.themename=='twentytwelve') {
               s.stickyElement.css('margin', '');
             }
+
+            if (LMScriptParams.themename=='sixteen') {
+              s.stickyElement.css('margin-left', '-100px');
+            }
             
             s.stickyElement.parent().removeClass(s.className);
             s.currentTop = null;
