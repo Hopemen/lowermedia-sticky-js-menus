@@ -27,7 +27,7 @@ Plugins tested to work with this theme work a tad bit differently.  Instead of
 	already defined.  JS manipulates the menus by using the already defined tags. 
 
 This plugin has been tested on a growing number of themes including: (will, in most cases, work on themes other than the following as well)
-   twentythirteen, twentytwelve, twentyeleven, responsive, wp-foundation, required-foundation, neuro, Swtor_NeozOne_Wp, lowermedia_one_page_theme, expound, customizr
+   twentythirteen, twentytwelve, twentyeleven, responsive, wp-foundation, required-foundation, neuro, Swtor_NeozOne_Wp, lowermedia_one_page_theme, expound, customizr, sixteen
 
 
 == Installation ==

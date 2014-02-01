@@ -21,7 +21,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 #	already defined.  JS manipulates the menus by using the already defined tags. 
 #
 #	This plugin has been tested on a growing number of themes including:
-#   twentytwelve, twentyeleven, responsive, wp-foundation, required-foundation, neuro, Swtor_NeozOne_Wp, lowermedia_one_page_theme, expound
+#   twentytwelve, twentyeleven, responsive, wp-foundation, required-foundation, neuro, Swtor_NeozOne_Wp, lowermedia_one_page_theme, expound, customizr, sixteen
 #
 */
 
@@ -48,7 +48,8 @@ function lowermedia_add_sticky_js()
 		&& $theme_data['Template']!='Swtor_NeozOne_Wp' 
 		&& $theme_data['Template']!='lowermedia_one_page_theme'
 		&& $theme_data['Template']!='expound'
-		&& $theme_data['Template']!='sixteen')
+		&& $theme_data['Template']!='sixteen'
+		&& $theme_data['Template']!='destro')
 	{
 		function my_wp_nav_menu_args( $args = '' )
 			{
