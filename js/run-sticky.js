@@ -53,9 +53,13 @@ jQuery(document).ready(function(){
     {
       jQuery(".art-nav").sticky({ topSpacing: 0 });//Swtor_NeozOne_Wp
     }
-    else if (LMScriptParams.themename=='lowermedia_one_page_theme')
+  else if (LMScriptParams.themename=='lowermedia_one_page_theme')
     {
       jQuery("#site-navigation").sticky({ topSpacing: 0 });//lowermedia_one_page_theme
+    }
+  else if (LMScriptParams.themename=='lowermedia_one_page_theme')
+    {
+      jQuery("#site-navigation").sticky({ topSpacing: 0 });//expound
     }
   else
     {
