@@ -57,7 +57,7 @@ jQuery(document).ready(function(){
     {
       jQuery("#menu").sticky({ topSpacing: 0 });//destro
     }
-  else if (LMScriptParams.themename=='destro')
+  else if (LMScriptParams.themename=='attitude')
     {
       jQuery("#access").sticky({ topSpacing: 0 });//destro
     }
