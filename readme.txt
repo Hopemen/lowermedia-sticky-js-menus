@@ -3,8 +3,8 @@ Contributors: hawkeye126
 Donate link: http://lowermedia.net/
 Tags: js, sticky.js, multisite, navigation
 Requires at least: 3.0.1
-Tested up to: 3.5.2
-Stable tag: 1
+Tested up to: 3.7
+Stable tag: 3.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +13,8 @@ WordPress plugin that integrates sticky.js and makes your primary navigation men
 
 == Description ==
 
-<h1>LowerMedia_sticky_js_menus</h1>
+WordPress plugin that integrates sticky.js and makes your primary navigation menu sticky 
+(will 'stick' to top of screen when rolled over).  
 
 Activate and make your primary menu sticky!  
 Sticky means having your navigation always visible, the nav fixes itself to the top of the page.  
@@ -23,21 +24,36 @@ This plugin uses the <a href='http://stickyjs.com'>Sticky.js</a> script, props a
 
 
 <a href='http://lowermedia.net'>LowerMedia.Net</a>
+<a href='http://petelower.com'>Dev'd by Pete</a>
 
 
 
 More info:
 
-This plugin was design to work out of the box with any theme by adding a class to 
-#	the menu container and then manipulating the HTML tag w/ said class by way of JS
-#	
-#
-#	Plugins tested to work with this theme work a tad bit differently.  Instead of 
-#	adding a class it uses custom js files that have the main navigational selectors 
-#	already defined.  JS manipulates the menus by using the already defined tags. 
-#
-#	This plugin has been tested on a growing number of themes including:
-#   twentytwelve, twentyeleven, responsive, wp-foundation, required-foundation
+This plugin was designed to work out of the box with a large number of popular themes if not all
+the menu container and then manipulating the HTML tag w/ said class by way of JS
+
+Plugins tested to work with this theme work a tad bit differently.  Instead of 
+adding a class it uses custom js files that have the main navigational selectors 
+already defined.  JS manipulates the menus by using the already defined tags. 
+
+This plugin has been tested on a growing number of themes including: (will, in most cases, work on themes other than the following as well)
+   twentythirteen, 
+   twentytwelve, 
+   twentyeleven, 
+   responsive, 
+   wp-foundation, 
+   required-foundation, 
+   neuro, 
+   Swtor_NeozOne_Wp, 
+   lowermedia_one_page_theme, 
+   expound, 
+   customizr, 
+   sixteen, 
+   destro, 
+   swift basic
+
+   *Some CSS edits may be required
 
 
 == Installation ==
@@ -64,6 +80,11 @@ Some theme styles or template styles may have overwritten the default styles, th
 
 = 1.0 =
 *Plugin Launched
+
+= 2.0 =
+*Moving all js into two files instead of having individual files for specific themes
+*Optimize and shorten code
+*Increase number of themes tested with and supporting out of the box
 
 == Upgrade Notice ==
 
