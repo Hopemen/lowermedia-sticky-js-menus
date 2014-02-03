@@ -1,4 +1,4 @@
-=== LowerMedia Sticky.js ===
+=== LowerMedia Sticky.js Menu's ===
 Contributors: hawkeye126
 Donate link: http://lowermedia.net/
 Tags: js, sticky.js, multisite, navigation
