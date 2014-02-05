@@ -61,7 +61,7 @@ jQuery(document).ready(function(){
     {
       jQuery(".site-navigation").sticky({ topSpacing: 0 });//spun
     }
-  else if (LMScriptParams.themename=='lowermedia_one_page_theme' || LMScriptParams.themename=='expound' || LMScriptParams.themename=='sixteen')
+  else if (LMScriptParams.themename=='lowermedia_one_page_theme' || LMScriptParams.themename=='expound' || LMScriptParams.themename=='sixteen' || LMScriptParams.themename=='bushwick')
     {
       jQuery("#site-navigation").sticky({ topSpacing: 0 });//lowermedia_one_page_theme or expound
     }
