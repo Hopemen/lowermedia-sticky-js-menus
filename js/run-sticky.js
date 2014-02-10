@@ -17,10 +17,6 @@ jQuery(document).ready(function(){
     {
       jQuery("#navbar").sticky({ topSpacing: 0 });//#twentythirteen
     }
-  else if (LMScriptParams.themename=='twentytwelve')
-    {
-      jQuery("#site-navigation").sticky({ topSpacing: 0 });//twentytwelve
-    }
   else if (LMScriptParams.themename=='twentyeleven')
     {
       jQuery("nav#access").sticky({ topSpacing: 0 });//twentyeleven
@@ -61,9 +57,9 @@ jQuery(document).ready(function(){
     {
       jQuery(".site-navigation").sticky({ topSpacing: 0 });//spun
     }
-  else if (LMScriptParams.themename=='lowermedia_one_page_theme' || LMScriptParams.themename=='expound' || LMScriptParams.themename=='sixteen' || LMScriptParams.themename=='bushwick')
+  else if (LMScriptParams.themename=='lowermedia_one_page_theme' || LMScriptParams.themename=='expound' || LMScriptParams.themename=='sixteen' || LMScriptParams.themename=='bushwick' || LMScriptParams.themename=='twentytwelve')
     {
-      jQuery("#site-navigation").sticky({ topSpacing: 0 });//lowermedia_one_page_theme or expound
+      jQuery("#site-navigation").sticky({ topSpacing: 0 });//lowermedia_one_page_theme, expound, sixteen, bushwik, or twentytwelve
     }
   else
     {
