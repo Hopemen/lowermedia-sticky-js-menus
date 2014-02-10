@@ -14,9 +14,6 @@
 
 (function($) {
 
-  //var newClass = window.location.href;
-  //newClass = newClass.substring(newClass.lastIndexOf('/')+1, 5);
-  //$('body').addClass(newClass);
   $('body').addClass('petejsclass');
   
   var gotwidth;
@@ -161,7 +158,7 @@
           
           if (LMScriptParams.themename!='responsive') {
 			stickyWrapper.css('height', stickyElement.outerHeight());//hide if responsive
-		  } 
+		  }
           
           sticked.push({
             topSpacing: o.topSpacing,
