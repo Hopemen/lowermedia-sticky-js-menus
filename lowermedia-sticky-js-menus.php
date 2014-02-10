@@ -19,7 +19,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 #	adding a class it uses custom js files that have the main navigational selectors 
 #	already defined.  JS manipulates the menus by using the already defined tags. 
 #
-#	
 #
 #   This plugin has been tested on a growing number of themes including:
 #   
