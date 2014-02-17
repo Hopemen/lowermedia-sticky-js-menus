@@ -4,7 +4,7 @@ Donate link: http://lowermedia.net/
 Tags: js, sticky.js, multisite, navigation
 Requires at least: 3.0.1
 Tested up to: 3.8.1
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -85,6 +85,11 @@ Some theme styles or template styles may have overwritten the default styles, th
 *Moving all js into two files instead of having individual files for specific themes
 *Optimize and shorten code
 *Increase number of themes tested with and supporting out of the box
+
+= 2.0.x=
+*Fix jumpiness issue
+*Add to list of supported browsers
+*Optimization
 
 == Upgrade Notice ==
 

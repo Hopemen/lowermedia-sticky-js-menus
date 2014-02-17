@@ -10,7 +10,8 @@
 //       It will only set the 'top' and 'position' of your element, you
 //       might need to adjust the width in some cases.
 
-
+// Revised by Pete Lower for WordPress Plugin LowerMedia Sticky JS Menus
+// Free rock music: i9mh.com
 
 (function($) {
 
