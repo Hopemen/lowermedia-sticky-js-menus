@@ -157,8 +157,8 @@
           var stickyWrapper = stickyElement.parent();
           
           if (LMScriptParams.themename!='responsive') {
-			stickyWrapper.css('height', stickyElement.outerHeight());//hide if responsive
-		  }
+            stickyWrapper.css('height', stickyElement.outerHeight());//hide if responsive
+          }
           
           sticked.push({
             topSpacing: o.topSpacing,
