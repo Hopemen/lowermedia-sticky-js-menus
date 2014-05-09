@@ -3,8 +3,8 @@ Contributors: hawkeye126
 Donate link: http://lowermedia.net/
 Tags: js, sticky.js, multisite, navigation
 Requires at least: 3.0.1
-Tested up to: 3.8.1
-Stable tag: 2.0.2
+Tested up to: 3.9.1
+Stable tag: 2.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -86,10 +86,19 @@ Some theme styles or template styles may have overwritten the default styles, th
 *Optimize and shorten code
 *Increase number of themes tested with and supporting out of the box
 
-= 2.0.x=
+= 2.0.1 =
 *Fix jumpiness issue
 *Add to list of supported browsers
 *Optimization
+
+= 2.0.2 =
+*Add ability to target default menu
+*Fix 'jumping around of menu in rare cases'
+*Syntax correction
+
+= 2.0.3 =
+*Add improvements for Isabella and Spacious theme
+*Documentation
 
 == Upgrade Notice ==
 

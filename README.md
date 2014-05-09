@@ -71,8 +71,14 @@ Some theme styles or template styles may have overwritten the default styles, th
 	  - Expound theme support
 	  - LowerMedia One Page theme support
 	  - Neuro theme support
-2.0.0 -
+2.0.0 - Moving all js into two files instead of having individual files for specific themes
+	  - Optimize and shorten code
+	  - Increase number of themes tested with and supporting out of the box
 
-1.0.1 -
+1.0.1 - 
 
-1.0.0 -
+1.0.0 - Plugin Launched
+
+
+*Add to list of supported browsers
+*Optimization
