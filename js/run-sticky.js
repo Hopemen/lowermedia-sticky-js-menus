@@ -59,6 +59,14 @@ jQuery(document).ready(function(){
     {
       jQuery(".site-navigation").sticky({ topSpacing: 0 });//spun
     }
+  else if (LMScriptParams.themename=='Isabelle')
+    {
+      jQuery(".nav").sticky({ topSpacing: 0 });//spun
+    }
+  else if (LMScriptParams.themename=='spacious')
+    {
+      jQuery("#header-text-nav-container").sticky({ topSpacing: 0 });//spun
+    }
   else if (LMScriptParams.themename=='lowermedia_one_page_theme' || LMScriptParams.themename=='expound' || LMScriptParams.themename=='sixteen' || LMScriptParams.themename=='bushwick' || LMScriptParams.themename=='twentytwelve')
     {
       jQuery("#site-navigation").sticky({ topSpacing: 0 });//lowermedia_one_page_theme, expound, sixteen, bushwik, or twentytwelve
