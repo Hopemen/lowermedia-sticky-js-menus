@@ -19,6 +19,9 @@
 
   $('body').addClass('petejsclass');
   
+
+  //  THIS IF STATEMENT DECIDES THE WIDTH OF THE STICKY NAV
+  //  CONTAINER BASED ON THE DIV SPECIFIED
   var gotwidth;
   if (LMScriptParams.themename=='responsive')
     {
