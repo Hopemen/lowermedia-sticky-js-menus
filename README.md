@@ -51,3 +51,28 @@ Please make sure your child theme has the same header navigation HTML syntax as 
 = My menu does not stick to the top of the page, there is some space between the menu and top of the page. =
 
 Some theme styles or template styles may have overwritten the default styles, the site owner may have to tweak their own css to for ideal display.
+
+== CHANGELOG ==
+
+2.0.3 - Add improvements for Isabella and Spacious theme
+	  - Documentation
+
+2.0.2 - Add ability to target default menu
+	  - Fix 'jumping around of menu in rare cases'
+	  - Syntax correction
+
+2.0.1 - Bushwik theme support
+	  - TwentyTwelve as base theme
+	  - Documentation
+	  - Name Correction
+	  - Attitude theme support
+	  - Destro Theme support
+	  - Sixteen theme support
+	  - Expound theme support
+	  - LowerMedia One Page theme support
+	  - Neuro theme support
+2.0.0 -
+
+1.0.1 -
+
+1.0.0 -
