@@ -38,6 +38,10 @@
     {
       gotwidth = '#content_section';
     }
+  else if (LMScriptParams.themename=='Isabelle')
+    {
+      gotwidth = '.container';
+    }
   else
     {
       gotwidth = '#page';//CHANGING VARIABLE LINE PER THEME
