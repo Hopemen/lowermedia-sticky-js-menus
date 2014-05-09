@@ -5,6 +5,11 @@
 #   it uses this parameter to decide which div to put the sticky wrapper around.  The .sticky function
 #   is defined in jquery.sticky.js.  This script also adds two classes to the body for debuging/testing
 #   and/or styling if needed
+#   it uses this parameter to decide which div to put the sticky wrapper around.  
+#
+#   The .sticky function is defined in jquery.sticky.js.  
+#
+#   This script also adds two classes to the body for debuging/testing and/or styling if needed
 #
 #
 */
