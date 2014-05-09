@@ -9,7 +9,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 WordPress plugin that integrates sticky.js and makes your primary navigation menu sticky 
-(will 'stick' to top of screen when rolled over).  
+(will 'stick' to top of screen when rolled over).
 
 == Description ==
 
@@ -25,7 +25,6 @@ This plugin uses the <a href='http://stickyjs.com'>Sticky.js</a> script, props a
 
 <a href='http://lowermedia.net'>LowerMedia.Net</a>
 <a href='http://petelower.com'>Dev'd by Pete</a>
-
 
 
 More info:
@@ -90,6 +89,16 @@ Some theme styles or template styles may have overwritten the default styles, th
 *Fix jumpiness issue
 *Add to list of supported browsers
 *Optimization
+*Bushwik theme support
+*TwentyTwelve as base theme
+*Documentation
+*Name Correction
+*Attitude theme support
+*Destro Theme support
+*Sixteen theme support
+*Expound theme support
+*LowerMedia One Page theme support
+*Neuro theme support
 
 = 2.0.2 =
 *Add ability to target default menu
