@@ -16,9 +16,6 @@ jQuery(document).ready(function(){
   jQuery('body').addClass(LMScriptParams.themename);
   jQuery('body').addClass(LMScriptParams.disableatwidth);
 
-  //disable at small screen sizes
-  //var myfixed_disable_small = parseInt(LMScriptParams.mysticky_disable_at_width_string);
-  //var mybodyWidth = parseInt(document.body.clientWidth);
 
 if (jQuery('body').width() > LMScriptParams.disableatwidth) {
   if(LMScriptParams.stickytarget)
