@@ -4,7 +4,7 @@ Donate link: http://lowermedia.net/
 Tags: js, sticky.js, multisite, navigation
 Requires at least: 3.0.1
 Tested up to: 3.9.1
-Stable tag: 2.0.3
+Stable tag: 3.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -29,7 +29,7 @@ This plugin uses the <a href='http://stickyjs.com'>Sticky.js</a> script, props a
 
 More info:
 
-This plugin was designed to work out of the box with a large number of popular themes if not all
+This plugin is designed to work out of the box with a large number of popular themes if not all
 the menu container and then manipulating the HTML tag w/ said class by way of JS
 
 Plugins tested to work with this theme work a tad bit differently.  Instead of 

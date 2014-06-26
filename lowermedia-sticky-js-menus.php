@@ -3,19 +3,16 @@
 Plugin Name: LowerMedia Sticky.js Menu's
 Plugin URI: http://lowermedia.net
 Description: WordPress plugin that integrates sticky.js and makes your primary navigation menu sticky (will 'stick' to top of screen when rolled over).  Activate and make your primary menu sticky!  Sticky means having your navigation always visible, the nav fixes itself to the top of the page.  This plugin uses the <a href='http://stickyjs.com'>Sticky.js</a> script, props and credit for creating that go to <a href="http://anthonygarand.com">Anthony Garand</a>, Thanks Anthony!   
-Version: 2.0.3
-Stable: 2.0.3
+Version: 3.0.0
+Stable: 3.0.0
 Author: Pete Lower
 Author URI: http://petelower.com
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
-// Block direct acess to the file
-defined('ABSPATH') or die("Cannot access pages directly.");
-
 /*############################################################################################
-#	This plugin was designed to work out of the box with any theme by adding a class to 
+#	This plugin is designed to work out of the box with any theme by adding a class to 
 #	the menu container and then manipulating the HTML tag w/ said class by way of JS
 #	
 #	Plugins tested to work with this theme work a tad bit differently.  Instead of 
@@ -30,6 +27,13 @@ defined('ABSPATH') or die("Cannot access pages directly.");
 #
 */
 
+/*############################################################################################
+#
+#   SECURITY: BLOCK DIRECT ACCESS TO FILE
+#
+*/
+
+defined('ABSPATH') or die("Cannot access pages directly.");
 
 
 /*############################################################################################
@@ -143,7 +147,29 @@ defined('ABSPATH') or die("Cannot access pages directly.");
 	    return $links;
 	}
 
+/*############################################################################################
+#
+#   Remove More Jump Link
+#   
+*/
 
+	function lmstickyjs_remove_more_jump_link($link) 
+	{ 
+	
+		$offset = strpos($link, '#more-');
+	
+		if ($offset) {
+			$end = strpos($link, '"',$offset);
+		}
+	
+		if ($end) {
+			$link = substr_replace($link, '', $offset, $end-$offset);
+		}
+	
+		return $link;
+	}
+	
+	add_filter('the_content_more_link', 'lmstickyjs_remove_more_jump_link');
 
 /*############################################################################################
 #
@@ -192,6 +218,16 @@ defined('ABSPATH') or die("Cannot access pages directly.");
 	                do_settings_sections( 'lm-stickyjs-settings' );
 	                submit_button(); 
 	            ?>
+	            <br/><br/>
+			        <center>
+			        I created this to save you time, for free :D It took some time, feel free to donate:<br/>
+			        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+					<input type="hidden" name="cmd" value="_s-xclick">
+					<input type="hidden" name="hosted_button_id" value="3S66QV3H7L49Y">
+					<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+					<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+					</form>
+					</center>
 	            </form>
 	        </div>
 	        <?php
@@ -218,7 +254,7 @@ defined('ABSPATH') or die("Cannot access pages directly.");
 
 	        add_settings_field(
 	            'lmstickyjs_class_selector', // ID
-	            'Sticky Class', // Title 
+	            'Sticky Object', // Title 
 	            array( $this, 'lmstickyjs_class_selector_callback' ), // Callback
 	            'lm-stickyjs-settings', // Page
 	            'setting_section_id' // Section         
@@ -226,7 +262,7 @@ defined('ABSPATH') or die("Cannot access pages directly.");
 
 	        add_settings_field(
 	            'lmstickyjs_class_selector-two', // ID
-	            'Additional Sticky Class', // Title 
+	            'Additional Sticky Object', // Title 
 	            array( $this, 'lmstickyjs_class_selector_two_callback' ), // Callback
 	            'lm-stickyjs-settings', // Page
 	            'setting_section_id' // Section         
@@ -369,7 +405,7 @@ defined('ABSPATH') or die("Cannot access pages directly.");
 	    //section text output
 	    public function print_section_info()
 	    {
-	        print 'Target the div you would like to be sticky.  If you do not this plugin will try and determine your theme and in turn the necessary div/nav to target.  Thank you for using the plugin, please enjoy some free <a href="http://item9andthemadhatters.com">Rock Music</a>';
+	        print 'Target the div you would like to be sticky.  If you do not this plugin will try and determine your theme and in turn the necessary div/nav to target.  Thank you for using the plugin, please enjoy some free <a href="http://item9andthemadhatters.com">Rock Music</a>.';
 	    }
 
 	    //Get the settings option array and print one of its values 
@@ -465,23 +501,7 @@ defined('ABSPATH') or die("Cannot access pages directly.");
 
 	// Remove default option for more link that jumps at the midle of page and its covered by menu
 
-	function lmstickyjs_remove_more_jump_link($link) 
-	{ 
-	
-		$offset = strpos($link, '#more-');
-	
-		if ($offset) {
-			$end = strpos($link, '"',$offset);
-		}
-	
-		if ($end) {
-			$link = substr_replace($link, '', $offset, $end-$offset);
-		}
-	
-		return $link;
-	}
-	
-	add_filter('the_content_more_link', 'lmstickyjs_remove_more_jump_link');
+
 
 	// Create style from options
 
