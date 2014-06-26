@@ -85,6 +85,7 @@ defined('ABSPATH') or die("Cannot access pages directly.");
 		$params = array(
 		  'themename' => $theme_data['Template'],
 		  'stickytarget' => $lmstickyjs_options['lmstickyjs_class_selector'],
+		  'stickytarget-two' => $lmstickyjs_options['lmstickyjs_class_selector-two'],
 		  'disableatwidth' => $lmstickyjs_options['myfixed_disable_small_screen']
 		);
 
@@ -181,7 +182,7 @@ defined('ABSPATH') or die("Cannot access pages directly.");
 	        ?>
 	        <div class="wrap">
 	            <?php screen_icon(); ?>
-	            <h2>LowerMedia Sticky.js Settings</h2>           
+	            <h2><a href='http://lowermedia.net'>LowerMedia</a> <a href='http://stickyjs.com'>Sticky.js</a> Settings</h2>           
 	            <form method="post" action="options.php">
 	            <?php
 	                // This prints out all hidden setting fields
@@ -220,10 +221,18 @@ defined('ABSPATH') or die("Cannot access pages directly.");
 	            'lm-stickyjs-settings', // Page
 	            'setting_section_id' // Section         
 	        );
+
+	        add_settings_field(
+	            'lmstickyjs_class_selector-two', // ID
+	            'Additional Sticky Class', // Title 
+	            array( $this, 'lmstickyjs_class_selector_two_callback' ), // Callback
+	            'lm-stickyjs-settings', // Page
+	            'setting_section_id' // Section         
+	        );
 	        
 			add_settings_field(
 	            'myfixed_disable_small_screen', 
-	            'Disable at Small Screen Sizes', 
+	            'Disable on Screen Width of', 
 	            array( $this, 'myfixed_disable_small_screen_callback' ), 
 	            'lm-stickyjs-settings', 
 	            'setting_section_id'
@@ -299,6 +308,10 @@ defined('ABSPATH') or die("Cannot access pages directly.");
 	        if( isset( $input['lmstickyjs_class_selector'] ) )
 	            $new_input['lmstickyjs_class_selector'] = sanitize_text_field( $input['lmstickyjs_class_selector'] );
 
+	        if( isset( $input['lmstickyjs_class_selector-two'] ) )
+	            $new_input['lmstickyjs_class_selector-two'] = sanitize_text_field( $input['lmstickyjs_class_selector-two'] );
+
+
 	        if( isset( $input['myfixed_disable_small_screen'] ) )
 	            $new_input['myfixed_disable_small_screen'] = absint( $input['myfixed_disable_small_screen'] );
 				
@@ -336,6 +349,7 @@ defined('ABSPATH') or die("Cannot access pages directly.");
 			
 			$default = array(
 					'lmstickyjs_class_selector' => '',
+					'lmstickyjs_class_selector-two' => '',
 					'myfixed_disable_small_screen' => '359'
 					// 'myfixed_zindex' => '1000000',
 					// 'myfixed_bgcolor' => '#F39A30',
@@ -353,22 +367,30 @@ defined('ABSPATH') or die("Cannot access pages directly.");
 	    //section text output
 	    public function print_section_info()
 	    {
-	        print 'Add nice modern sticky menu or header to any theme. Defaults works for Twenty Thirteen theme. <br />For other themes change "Sticky Class" to div class desired to be sticky (div id can be used too).';
+	        print 'Target the div you would like to be sticky.  If you do not this plugin will try and determine your theme and in turn the necessary div/nav to target.';
 	    }
 
 	    //Get the settings option array and print one of its values 
 	    public function lmstickyjs_class_selector_callback()
 	    {
 	        printf(
-	            '<p class="description"><input type="text" size="8" id="lmstickyjs_class_selector" name="lmstickyjs_option_name[lmstickyjs_class_selector]" value="%s" /> menu or header div class or id.</p>',
+	            '<p class="description"><input type="text" size="8" id="lmstickyjs_class_selector" name="lmstickyjs_option_name[lmstickyjs_class_selector]" value="%s" /> id (#mydiv) or class (.myclass) of menu you want sticky</p>',
 	            isset( $this->options['lmstickyjs_class_selector'] ) ? esc_attr( $this->options['lmstickyjs_class_selector']) : '' 
+	        );
+	    }
+
+	    public function lmstickyjs_class_selector_two_callback()
+	    {
+	        printf(
+	            '<p class="description"><input type="text" size="8" id="lmstickyjs_class_selector-two" name="lmstickyjs_option_name[lmstickyjs_class_selector-two]" value="%s" /> id (#mydiv) or class (.myclass) of menu you want sticky</p>',
+	            isset( $this->options['lmstickyjs_class_selector-two'] ) ? esc_attr( $this->options['lmstickyjs_class_selector-two']) : '' 
 	        );
 	    }
 		
 	    public function myfixed_disable_small_screen_callback()
 		{
 			printf(
-			'<p class="description">less than <input type="text" size="4" id="myfixed_disable_small_screen" name="lmstickyjs_option_name[myfixed_disable_small_screen]" value="%s" />px width, 0  to disable.</p>',
+			'<p class="description"><input type="text" size="8" id="myfixed_disable_small_screen" name="lmstickyjs_option_name[myfixed_disable_small_screen]" value="%s" /> px or less, use to hide sticky effect on mobile and/or small screens</p>',
 	            isset( $this->options['myfixed_disable_small_screen'] ) ? esc_attr( $this->options['myfixed_disable_small_screen']) : ''
 			);
 		}
