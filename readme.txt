@@ -110,7 +110,7 @@ Some theme styles or template styles may have overwritten the default styles, th
 *Documentation
 
 = 3.0.0 =
-*SECURITY UPDATE: Block direct acess to the file
+*SECURITY UPDATE: Block direct access to php file
 
 
 == Upgrade Notice ==

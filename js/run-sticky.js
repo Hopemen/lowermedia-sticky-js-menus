@@ -14,6 +14,7 @@
 jQuery(document).ready(function(){
   jQuery('body').addClass('pete-runsticky');
   jQuery('body').addClass(LMScriptParams.themename);
+  jQuery('body').addClass(LMScriptParams.disableatwidth);
 
   if (LMScriptParams.themename=='twentythirteen')
     {
