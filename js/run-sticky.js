@@ -16,6 +16,16 @@ jQuery(document).ready(function(){
   jQuery('body').addClass(LMScriptParams.themename);
   jQuery('body').addClass(LMScriptParams.disableatwidth);
 
+  if (jQuery('body').width() > LMScriptParams.disableatwidth) {
+    if(LMScriptParams.stickytarget)
+      {
+        jQuery('body').addClass(LMScriptParams.stickytarget);
+        jQuery(LMScriptParams.stickytarget).sticky({ topSpacing: 0 });
+      }
+    else
+      {
+        jQuery('body').addClass('sticky-using-default-target');
+        jQuery("#navbar").sticky({ topSpacing: 0 });
 
 if (jQuery('body').width() > LMScriptParams.disableatwidth) {
   if(LMScriptParams.stickytarget)
