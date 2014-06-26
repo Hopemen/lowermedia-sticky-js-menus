@@ -65,6 +65,31 @@ e.g.
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Make sure you have a menu defined under appearance -> menus
 
+
+Popular Themes Default Target List:
+
+   attitude = #access
+   bushwick = #site-navigation
+   destro = #menu
+   expound = #site-navigation
+   Isabelle = .nav
+   lowermedia_one_page_theme
+   neuro = #navigation_menu
+   one-page = .header_wrapper
+   required-foundation = #access
+   responsive = main-nav
+   spacious = #header-text-nav-container
+   sixteen = #site-navigation
+   spun = .site-navigation
+   Swtor_NeozOne_Wp = art-nav
+   twentythirteen = #navbar
+   twentytwelve = #site-navigation
+   twentyeleven = nav#access
+   twentyten = #access
+   virtue = #topbar
+   wp-foundation = .top-nav
+
+
 == Frequently Asked Questions ==
 
 = I am using one of the themes this plugin was tested to work on but it's not working. =
@@ -110,7 +135,11 @@ Some theme styles or template styles may have overwritten the default styles, th
 *Documentation
 
 = 3.0.0 =
+*WILL NOW SUPPORT ALL THEMES WITH MINOR SETTINGS CONFIGURATION
 *SECURITY UPDATE: Block direct access to php file
+*FEATURE: Admin options area
+*FEATURE: Option to set target div or nav (by class or id) to designate sticky.js target
+*FEATURE: Option to disable stickyness at certain body width (hide on mobile)
 
 
 == Upgrade Notice ==
