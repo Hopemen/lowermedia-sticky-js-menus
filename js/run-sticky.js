@@ -25,7 +25,6 @@ jQuery(document).ready(function(){
     else
       {
         jQuery('body').addClass('sticky-using-default-target');
-        jQuery("#navbar").sticky({ topSpacing: 0 });
 
         //IF THE USER DOESN'T TARGET WE WILL TRY AND DO IT FOR THEM
         if (LMScriptParams.themename=='twentythirteen')
