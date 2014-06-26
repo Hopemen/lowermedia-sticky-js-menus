@@ -136,6 +136,8 @@ defined('ABSPATH') or die("Cannot access pages directly.");
 	        // this case equals "myplugin-settings".
 	        $settings_link = '<a href="' . get_bloginfo('wpurl') . '/wp-admin/nav-menus.php">Set Menu</a>';
 	        array_unshift($links, $settings_link);
+	        $settings_link = '<a href="' . get_bloginfo('wpurl') . '/wp-admin/options-general.php?page=lm-stickyjs-settings">Settings</a>';
+	        array_unshift($links, $settings_link);
 	    }
 
 	    return $links;
