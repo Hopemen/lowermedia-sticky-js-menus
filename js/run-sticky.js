@@ -19,7 +19,7 @@ jQuery(document).ready(function(){
   if (jQuery('body').width() > LMScriptParams.disableatwidth) {
     if(LMScriptParams.stickytarget)
       {
-        jQuery('body').addClass(LMScriptParams.stickytarget);
+        jQuery('body').addClass('target-'+LMScriptParams.stickytarget);
         jQuery(LMScriptParams.stickytarget).sticky({ topSpacing: 0 });
       }
     else
@@ -93,6 +93,12 @@ jQuery(document).ready(function(){
           {
             jQuery(".lowermedia_add_sticky").sticky({ topSpacing: 0 });//#default
           }
+      }
+
+    if(LMScriptParams.stickytargettwo)
+      {
+        jQuery('body').addClass('target-'+LMScriptParams.stickytargettwo);
+        jQuery(LMScriptParams.stickytargettwo).sticky({ topSpacing: 0 });
       }
   }
 });

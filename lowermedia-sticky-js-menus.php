@@ -89,7 +89,7 @@ defined('ABSPATH') or die("Cannot access pages directly.");
 		$params = array(
 		  'themename' => $theme_data['Template'],
 		  'stickytarget' => $lmstickyjs_options['lmstickyjs_class_selector'],
-		  'stickytarget-two' => $lmstickyjs_options['lmstickyjs_class_selector-two'],
+		  'stickytargettwo' => $lmstickyjs_options['lmstickyjs_class_selector-two'],
 		  'disableatwidth' => $lmstickyjs_options['myfixed_disable_small_screen']
 		);
 
@@ -98,26 +98,6 @@ defined('ABSPATH') or die("Cannot access pages directly.");
 		wp_localize_script( 'run-sticky', 'LMScriptParams', $params );
 	}  
 	add_action( 'wp_enqueue_scripts', 'lowermedia_add_sticky_js' ); 
-
-
-// function lmstickyjsmenu_script() {
-		
-// 		$lmstickyjs_options = get_option( 'lmstickyjs_option_name' );
-		
-// 		// Register scripts
-// 			wp_register_script('lmstickyjsmenu', WP_PLUGIN_URL. '/lowermedia-sticky/lmstickyjsmenu.js', false,'1.0.0', true);
-// 			wp_enqueue_script( 'lmstickyjsmenu' );
-
-// 		// Localize lmstickyjsmenu.js script with lmstickyjsmenu options
-// 		$lmstickyjs_translation_array = array( 
-// 		    'lmstickyjs_string' => $lmstickyjs_options['lmstickyjs_class_selector'] ,
-// 			'lmstickyjs_active_on_height_string' => $lmstickyjs_options['lmstickyjs_active_on_height'],
-// 			'lmstickyjs_disable_at_width_string' => $lmstickyjs_options['myfixed_disable_small_screen']
-// 		);
-		
-// 			wp_localize_script( 'lmstickyjsmenu', 'lmstickyjs_name', $lmstickyjs_translation_array );
-// 	}
-// 	add_action( 'wp_enqueue_scripts', 'lmstickyjsmenu_script' );
 
 /*############################################################################################
 #
@@ -275,64 +255,6 @@ defined('ABSPATH') or die("Cannot access pages directly.");
 	            'lm-stickyjs-settings', 
 	            'setting_section_id'
 	        );
-
-				  //       add_settings_field(
-				  //           'myfixed_zindex', 
-				  //           'Sticky z-index', 
-				  //           array( $this, 'myfixed_zindex_callback' ), 
-				  //           'lm-stickyjs-settings', 
-				  //           'setting_section_id'
-				  //       );
-						
-						// add_settings_field(
-				  //           'myfixed_bgcolor', 
-				  //           'Sticky Background Color', 
-				  //           array( $this, 'myfixed_bgcolor_callback' ), 
-				  //           'lm-stickyjs-settings', 
-				  //           'setting_section_id'
-				  //       );
-						
-						// add_settings_field(
-				  //           'myfixed_opacity', 
-				  //           'Sticky Opacity', 
-				  //           array( $this, 'myfixed_opacity_callback' ), 
-				  //           'lm-stickyjs-settings', 
-				  //           'setting_section_id'
-				  //       );
-						
-						// add_settings_field(
-				  //           'myfixed_transition_time', 
-				  //           'Sticky Transition Time', 
-				  //           array( $this, 'myfixed_transition_time_callback' ), 
-				  //           'lm-stickyjs-settings', 
-				  //           'setting_section_id'
-				  //       );
-						
-			
-						// add_settings_field(
-				  //           'lmstickyjs_active_on_height', 
-				  //           'Make visible when scroled', 
-				  //           array( $this, 'lmstickyjs_active_on_height_callback' ), 
-				  //           'lm-stickyjs-settings', 
-				  //           'setting_section_id'
-				  //       );
-						
-						// add_settings_field(
-				  //           'myfixed_fade', 
-				  //           'Fade or slide effect', 
-				  //           array( $this, 'myfixed_fade_callback' ), 
-				  //           'lm-stickyjs-settings', 
-				  //           'setting_section_id'
-				  //       );	
-						
-						// add_settings_field(
-				  //           'myfixed_cssstyle', 
-				  //           '.myfixed css class', 
-				  //           array( $this, 'myfixed_cssstyle_callback' ), 
-				  //           'lm-stickyjs-settings', 
-				  //           'setting_section_id'
-							 
-				  //       );
 	    }
 		
 	    /**
@@ -351,31 +273,7 @@ defined('ABSPATH') or die("Cannot access pages directly.");
 
 
 	        if( isset( $input['myfixed_disable_small_screen'] ) )
-	            $new_input['myfixed_disable_small_screen'] = absint( $input['myfixed_disable_small_screen'] );
-				
-
-			//       if( isset( $input['myfixed_zindex'] ) )
-			//           $new_input['myfixed_zindex'] = absint( $input['myfixed_zindex'] );
-				
-			// if( isset( $input['myfixed_bgcolor'] ) )
-			//           $new_input['myfixed_bgcolor'] = sanitize_text_field( $input['myfixed_bgcolor'] );
-				
-			// if( isset( $input['myfixed_opacity'] ) )
-			//           $new_input['myfixed_opacity'] = absint( $input['myfixed_opacity'] );
-				
-			// if( isset( $input['myfixed_transition_time'] ) )
-			//           $new_input['myfixed_transition_time'] = sanitize_text_field( $input['myfixed_transition_time'] );
-			
-			// if( isset( $input['lmstickyjs_active_on_height'] ) )
-			//           $new_input['lmstickyjs_active_on_height'] = absint( $input['lmstickyjs_active_on_height'] );
-				
-			// if( isset( $input['myfixed_fade'] ) )
-			//           $new_input['myfixed_fade'] = sanitize_text_field( $input['myfixed_fade'] ); 
-
-			// if( isset( $input['myfixed_cssstyle'] ) )
-			//           //$new_input['myfixed_cssstyle'] = esc_textarea( $input['myfixed_cssstyle'] );
-			//            $new_input['myfixed_cssstyle'] = sanitize_text_field( $input['myfixed_cssstyle'] );
-				 
+	            $new_input['myfixed_disable_small_screen'] = absint( $input['myfixed_disable_small_screen'] ); 
 				 
 	        return $new_input;
 	    }
@@ -388,14 +286,7 @@ defined('ABSPATH') or die("Cannot access pages directly.");
 			$default = array(
 					'lmstickyjs_class_selector' => '',
 					'lmstickyjs_class_selector-two' => '',
-					'myfixed_disable_small_screen' => '359'
-					// 'myfixed_zindex' => '1000000',
-					// 'myfixed_bgcolor' => '#F39A30',
-					// 'myfixed_opacity' => '95',
-					// 'myfixed_transition_time' => '0.3',
-					// 'lmstickyjs_active_on_height' => '320',
-					// 'myfixed_fade' => false,
-					// 'myfixed_cssstyle' => '.myfixed { margin:0 auto!important; float:none!important; border:0px!important; background:none!important; max-width:100%!important; }'	
+					'myfixed_disable_small_screen' => '359'	
 				);
 			if ( get_option('lmstickyjs_option_name') == false ) {	
 				update_option( 'lmstickyjs_option_name', $default );		
@@ -432,132 +323,8 @@ defined('ABSPATH') or die("Cannot access pages directly.");
 	            isset( $this->options['myfixed_disable_small_screen'] ) ? esc_attr( $this->options['myfixed_disable_small_screen']) : ''
 			);
 		}
-
-			//    public function myfixed_zindex_callback()
-			//    {
-			//        printf(
-			//            '<p class="description"><input type="text" size="8" id="myfixed_zindex" name="lmstickyjs_option_name[myfixed_zindex]" value="%s" /> sticky z-index.</p>',
-			//            isset( $this->options['myfixed_zindex'] ) ? esc_attr( $this->options['myfixed_zindex']) : ''
-			//        );
-			//    }
-
-			// public function myfixed_bgcolor_callback()
-			//    {
-			//        printf(
-			//            '<p class="description"><input type="text" size="8" id="myfixed_bgcolor" name="lmstickyjs_option_name[myfixed_bgcolor]" value="%s" /> full width background color.</p>' ,
-			//            isset( $this->options['myfixed_bgcolor'] ) ? esc_attr( $this->options['myfixed_bgcolor']) : ''
-			//        );
-			//    }
-
-			// public function myfixed_opacity_callback()
-			//    {
-			//        printf(
-			//            '<p class="description"><input type="text" size="4" id="myfixed_opacity" name="lmstickyjs_option_name[myfixed_opacity]" value="%s" /> numbers 1-100.</p>',
-			//            isset( $this->options['myfixed_opacity'] ) ? esc_attr( $this->options['myfixed_opacity']) : ''
-			//        );
-			//    }
-
-			// public function myfixed_transition_time_callback()
-			//    {
-			//        printf(
-			//            '<p class="description"><input type="text" size="4" id="myfixed_transition_time" name="lmstickyjs_option_name[myfixed_transition_time]" value="%s" /> in seconds.</p>',
-			//            isset( $this->options['myfixed_transition_time'] ) ? esc_attr( $this->options['myfixed_transition_time']) : ''
-			//        );
-			//    }
-
-			// public function lmstickyjs_active_on_height_callback()
-			// {
-			// 	printf(
-			// 	'<p class="description">after <input type="text" size="4" id="lmstickyjs_active_on_height" name="lmstickyjs_option_name[lmstickyjs_active_on_height]" value="%s" />px, </p>',
-			//            isset( $this->options['lmstickyjs_active_on_height'] ) ? esc_attr( $this->options['lmstickyjs_active_on_height']) : ''
-			// 	);
-			// }
-
-			// public function myfixed_fade_callback()
-			// {
-			// 	printf(
-			// 		'<p class="description"><input id="%1$s" name="lmstickyjs_option_name[myfixed_fade]" type="checkbox" %2$s /> Checked is slide, unchecked is fade.</p>',
-			// 		'myfixed_fade',
-			// 		checked( isset( $this->options['myfixed_fade'] ), true, false ) 
-			// 	);
-				
-			// } 
-
-			//   public function myfixed_cssstyle_callback()
-
-			//    {
-			//        printf(
-			//            '
-			// 		<p class="description">Add/Edit .myfixed css class to change sticky menu style. Leave it blank for default style.</p>  <textarea type="text" rows="4" cols="60" id="myfixed_cssstyle" name="lmstickyjs_option_name[myfixed_cssstyle]">%s</textarea> <br />
-			// 	' ,
-			//            isset( $this->options['myfixed_cssstyle'] ) ? esc_attr( $this->options['myfixed_cssstyle']) : ''
-			//        );
-			// 	echo '<p class="description">Default style: .myfixed { margin:0 auto!important; float:none!important; border:0px!important; background:none!important; max-width:100%!important; }<br /><br />If you want to change sticky hover color first add default style and than: .myfixed li a:hover {color:#000; background-color: #ccc;} .<br /> More examples <a href="http://wordpress.transformnews.com/tutorials/lmstickyjsmenu-extended-style-functionality-using-myfixed-sticky-class-403" target="blank">here</a>.</p>';
-			//    }
 		
 	}//END OF CLASS
 	if( is_admin() ) {$my_settings_page = new LowerMediaStickyAdminPage();}
-	// end plugin admin settings
-
-	// Remove default option for more link that jumps at the midle of page and its covered by menu
-
-
-
-	// Create style from options
-
-	// function lmstickyjs_build_stylesheet_content() {
-	
-	// 	$lmstickyjs_options = get_option( 'lmstickyjs_option_name' );
-		
-	//     echo
-	// '<style type="text/css">';
-	// 	if ( is_user_logged_in() ) {
-	//     echo '#wpadminbar { position: absolute !important; top: 0px !important;}';
-	// 	}
-	// 	if (  $lmstickyjs_options['myfixed_cssstyle'] == "" )  {
-	// 	echo '.myfixed { margin:0 auto!important; float:none!important; border:0px!important; background:none!important; max-width:100%!important; }';
-	// 	}
-	// 	echo
-	// 	  $lmstickyjs_options ['myfixed_cssstyle'] ;
-		
-	// 	echo
-	// 	'
-	// 	#lmstickyjs-nav { width:100%!important;  position: static;';
-		    
-	// 	if (isset($lmstickyjs_options['myfixed_fade'])){
-		
-	// 	echo
-	// 	'top: -100px;';
-	// 	}
-	// 	echo
-	// 	'}';
-		
-	// 	if  ($lmstickyjs_options ['myfixed_opacity'] == 100 ){
-	   
-		
-	// 	echo
-	// 	'.wrapfixed { position: fixed!important; top:0px!important; left: 0px!important; margin-top:0px!important;  z-index: '. $lmstickyjs_options ['myfixed_zindex'] .'; -webkit-transition: ' . $lmstickyjs_options ['myfixed_transition_time'] . 's; -moz-transition: ' . $lmstickyjs_options ['myfixed_transition_time'] . 's; -o-transition: ' . $lmstickyjs_options ['myfixed_transition_time'] . 's; transition: ' . $lmstickyjs_options ['myfixed_transition_time'] . 's;  background-color: ' . $lmstickyjs_options ['myfixed_bgcolor'] . '!important;  }
-	// 	';
-	// 	}
-	// 	if  ($lmstickyjs_options ['myfixed_opacity'] < 100 ){
-	   
-		
-	// 	echo
-	// 	'.wrapfixed { position: fixed!important; top:0px!important; left: 0px!important; margin-top:0px!important;  z-index: '. $lmstickyjs_options ['myfixed_zindex'] .'; -webkit-transition: ' . $lmstickyjs_options ['myfixed_transition_time'] . 's; -moz-transition: ' . $lmstickyjs_options ['myfixed_transition_time'] . 's; -o-transition: ' . $lmstickyjs_options ['myfixed_transition_time'] . 's; transition: ' . $lmstickyjs_options ['myfixed_transition_time'] . 's;   -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=' . $lmstickyjs_options ['myfixed_opacity'] . ')"; filter: alpha(opacity=' . $lmstickyjs_options ['myfixed_opacity'] . '); opacity:.' . $lmstickyjs_options ['myfixed_opacity'] . '; background-color: ' . $lmstickyjs_options ['myfixed_bgcolor'] . '!important;  }
-	// 	';
-	// 	}
-		
-	// 	if  ($lmstickyjs_options ['myfixed_disable_small_screen'] > 0 ){
-	//     echo
-	// 		'@media (max-width: ' . $lmstickyjs_options ['myfixed_disable_small_screen'] . 'px) {.wrapfixed {position: static!important; display: none!important;}}
-	// 	';
-	// 	}
-	// 	echo 
-	// '</style>
-	// 	';
-	// }
-	// add_action('wp_head', 'lmstickyjs_build_stylesheet_content');
-	
-	
-	
+	// end plugin admin settings	
 ?>
