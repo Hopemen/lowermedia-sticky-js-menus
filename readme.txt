@@ -36,7 +36,7 @@ Plugins tested to work with this theme work a tad bit differently.  Instead of
 adding a class it uses custom js files that have the main navigational selectors 
 already defined.  JS manipulates the menus by using the already defined tags. 
 
-This plugin has been tested on a growing number of themes including: (will, in most cases, work on themes other than the following as well)
+This plugin has been tested on a growing number of themes including: (will work with all themes with slight settings configuration)
    twentythirteen, 
    twentytwelve, 
    twentyeleven, 
@@ -138,8 +138,10 @@ Some theme styles or template styles may have overwritten the default styles, th
 *WILL NOW SUPPORT ALL THEMES WITH MINOR SETTINGS CONFIGURATION
 *SECURITY UPDATE: Block direct access to php file
 *FEATURE: Admin options area
+*FEATURE: Now works without setting primary menu
 *FEATURE: Option to set target div or nav (by class or id) to designate sticky.js target
 *FEATURE: Option to disable stickyness at certain body width (hide on mobile)
+*FEATURE: Option to target additional html tag (div, nav, header, etc) by class or id
 
 
 == Upgrade Notice ==
