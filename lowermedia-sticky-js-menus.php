@@ -335,7 +335,7 @@ defined('ABSPATH') or die("Cannot access pages directly.");
 			global $options;
 			
 			$default = array(
-					'lmstickyjs_class_selector' => '.navbar',
+					'lmstickyjs_class_selector' => '',
 					'myfixed_disable_small_screen' => '359'
 					// 'myfixed_zindex' => '1000000',
 					// 'myfixed_bgcolor' => '#F39A30',
