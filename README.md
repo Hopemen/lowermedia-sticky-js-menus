@@ -1,5 +1,9 @@
 <h1>LowerMedia Sticky.js Menu's</h1>
 ==========================
+WordPress plugin that integrates sticky.js and makes your primary navigation menu sticky 
+(will 'stick' to top of screen when rolled over).
+
+== Description ==
 
 WordPress plugin that integrates sticky.js and makes your primary navigation menu sticky 
 (will 'stick' to top of screen when rolled over).  
@@ -15,19 +19,30 @@ This plugin uses the <a href='http://stickyjs.com'>Sticky.js</a> script, props a
 <a href='http://petelower.com'>Dev'd by Pete</a>
 
 
-
 More info:
 
 This plugin was designed to work out of the box with a large number of popular themes if not all
-	the menu container and then manipulating the HTML tag w/ said class by way of JS
-	
+the menu container and then manipulating the HTML tag w/ said class by way of JS
 
 Plugins tested to work with this theme work a tad bit differently.  Instead of 
-	adding a class it uses custom js files that have the main navigational selectors 
-	already defined.  JS manipulates the menus by using the already defined tags. 
+adding a class it uses custom js files that have the main navigational selectors 
+already defined.  JS manipulates the menus by using the already defined tags. 
 
-This plugin has been tested on a growing number of themes including: (will, in most cases, work on themes other than the following as well)
-   twentythirteen, twentytwelve, twentyeleven, responsive, wp-foundation, required-foundation, neuro, Swtor_NeozOne_Wp, lowermedia_one_page_theme, expound, customizr, sixteen, destro, swift basic, Isabelle, spacious
+This plugin has been tested on a growing number of themes including: (will work with all themes with slight settings configuration)
+   twentythirteen, 
+   twentytwelve, 
+   twentyeleven, 
+   responsive, 
+   wp-foundation, 
+   required-foundation, 
+   neuro, 
+   Swtor_NeozOne_Wp, 
+   lowermedia_one_page_theme, 
+   expound, 
+   customizr, 
+   sixteen, 
+   destro, 
+   swift basic
 
    *Some CSS edits may be required
 
@@ -42,6 +57,31 @@ e.g.
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Make sure you have a menu defined under appearance -> menus
 
+
+Popular Themes Default Target List:
+
+   attitude = #access
+   bushwick = #site-navigation
+   destro = #menu
+   expound = #site-navigation
+   Isabelle = .nav
+   lowermedia_one_page_theme
+   neuro = #navigation_menu
+   one-page = .header_wrapper
+   required-foundation = #access
+   responsive = main-nav
+   spacious = #header-text-nav-container
+   sixteen = #site-navigation
+   spun = .site-navigation
+   Swtor_NeozOne_Wp = art-nav
+   twentythirteen = #navbar
+   twentytwelve = #site-navigation
+   twentyeleven = nav#access
+   twentyten = #access
+   virtue = #topbar
+   wp-foundation = .top-nav
+
+
 == Frequently Asked Questions ==
 
 = I am using one of the themes this plugin was tested to work on but it's not working. =
@@ -52,33 +92,54 @@ Please make sure your child theme has the same header navigation HTML syntax as 
 
 Some theme styles or template styles may have overwritten the default styles, the site owner may have to tweak their own css to for ideal display.
 
-== CHANGELOG ==
+== Changelog ==
 
-2.0.3 - Add improvements for Isabella and Spacious theme
-	  - Documentation
+= 1.0 =
+*Plugin Launched
 
-2.0.2 - Add ability to target default menu
-	  - Fix 'jumping around of menu in rare cases'
-	  - Syntax correction
+= 2.0 =
+*Moving all js into two files instead of having individual files for specific themes
+*Optimize and shorten code
+*Increase number of themes tested with and supporting out of the box
 
-2.0.1 - Bushwik theme support
-	  - TwentyTwelve as base theme
-	  - Documentation
-	  - Name Correction
-	  - Attitude theme support
-	  - Destro Theme support
-	  - Sixteen theme support
-	  - Expound theme support
-	  - LowerMedia One Page theme support
-	  - Neuro theme support
-2.0.0 - Moving all js into two files instead of having individual files for specific themes
-	  - Optimize and shorten code
-	  - Increase number of themes tested with and supporting out of the box
-
-1.0.1 - 
-
-1.0.0 - Plugin Launched
-
-
+= 2.0.1 =
+*Fix jumpiness issue
 *Add to list of supported browsers
 *Optimization
+*Bushwik theme support
+*TwentyTwelve as base theme
+*Documentation
+*Name Correction
+*Attitude theme support
+*Destro Theme support
+*Sixteen theme support
+*Expound theme support
+*LowerMedia One Page theme support
+*Neuro theme support
+
+= 2.0.2 =
+*Add ability to target default menu
+*Fix 'jumping around of menu in rare cases'
+*Syntax correction
+
+= 2.0.3 =
+*Add improvements for Isabella and Spacious theme
+*Documentation
+
+= 3.0.0 =
+*WILL NOW SUPPORT ALL THEMES WITH MINOR SETTINGS CONFIGURATION
+*SECURITY UPDATE: Block direct access to php file
+*FEATURE: Admin options area
+*FEATURE: Now works without setting primary menu
+*FEATURE: Option to set target div or nav (by class or id) to designate sticky.js target
+*FEATURE: Option to disable stickyness at certain body width (hide on mobile)
+*FEATURE: Option to target additional html tag (div, nav, header, etc) by class or id
+
+
+== Upgrade Notice ==
+
+Coming when needed
+
+== Screenshots ==
+
+Coming when needed
