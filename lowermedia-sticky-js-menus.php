@@ -369,7 +369,7 @@ defined('ABSPATH') or die("Cannot access pages directly.");
 	    //section text output
 	    public function print_section_info()
 	    {
-	        print 'Target the div you would like to be sticky.  If you do not this plugin will try and determine your theme and in turn the necessary div/nav to target.';
+	        print 'Target the div you would like to be sticky.  If you do not this plugin will try and determine your theme and in turn the necessary div/nav to target.  Thank you for using the plugin, please enjoy some free <a href="http://item9andthemadhatters.com">Rock Music</a>';
 	    }
 
 	    //Get the settings option array and print one of its values 
