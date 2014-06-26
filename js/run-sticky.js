@@ -63,6 +63,11 @@ jQuery(document).ready(function(){
     {
       jQuery(".nav").sticky({ topSpacing: 0 });//spun
     }
+  else if (LMScriptParams.themename=='one-page')
+    {
+      jQuery(".header_wrapper").sticky({ topSpacing: 0 });//one-page
+      jQuery(".homepage_nav_title").sticky({ topSpacing: 0 });//spun
+    }
   else if (LMScriptParams.themename=='spacious')
     {
       jQuery("#header-text-nav-container").sticky({ topSpacing: 0 });//spun
