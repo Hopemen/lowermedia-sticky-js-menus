@@ -109,6 +109,10 @@ Some theme styles or template styles may have overwritten the default styles, th
 *Add improvements for Isabella and Spacious theme
 *Documentation
 
+= 3.0.0 =
+*SECURITY UPDATE: Block direct acess to the file
+
+
 == Upgrade Notice ==
 
 Coming when needed

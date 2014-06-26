@@ -11,6 +11,9 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
+// Block direct acess to the file
+defined('ABSPATH') or die("Cannot access pages directly.");
+
 /*############################################################################################
 #	This plugin was designed to work out of the box with any theme by adding a class to 
 #	the menu container and then manipulating the HTML tag w/ said class by way of JS
