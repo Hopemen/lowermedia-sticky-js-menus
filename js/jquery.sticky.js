@@ -18,6 +18,7 @@
 (function($) {
 
   $('body').addClass('petejsclass');
+  console.log(LMScriptParams);
   
 
   //  THIS IF STATEMENT DECIDES THE WIDTH OF THE STICKY NAV

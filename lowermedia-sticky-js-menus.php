@@ -99,9 +99,11 @@ if ( ! class_exists( 'LowerMedia_Sticky_JS_Menus' ) ) :
         }
 
         static function nav_append_container_and_class( $args = '' ) {
+
 			$args['container'] = 'nav';
 			$args['container_class'] = 'lowermedia_add_sticky';
 			return $args;
+
 		}
 
 		static function return_localization_information() {
@@ -123,6 +125,7 @@ if ( ! class_exists( 'LowerMedia_Sticky_JS_Menus' ) ) :
 		}
 
 		static function plugin_action_links($links, $file) {
+
 		    static $this_plugin;
 
 		    if ( !$this_plugin ) {
@@ -140,6 +143,7 @@ if ( ! class_exists( 'LowerMedia_Sticky_JS_Menus' ) ) :
 		    }
 
 		    return $links;
+
 		}
 
 		static function remove_more_jump_link($link) { 
@@ -171,8 +175,7 @@ endif;
 
 if ( ! class_exists( 'LowerMedia_Sticky_Admin_Page' ) ) :
 
-	class LowerMedia_Sticky_Admin_Page
-	{
+	class LowerMedia_Sticky_Admin_Page {
 	    //field callback values
 	    private $options;
 
