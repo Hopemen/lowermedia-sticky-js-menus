@@ -11,21 +11,21 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
-/*############################################################################################
-#	This plugin is designed to work out of the box with any theme by adding a class to 
-#	the menu container and then manipulating the HTML tag w/ said class by way of JS
-#	
-#	Plugins tested to work with this theme work a tad bit differently.  Instead of 
-#	adding a class it uses custom js files that have the main navigational selectors 
-#	already defined.  JS manipulates the menus by using the already defined tags. 
-#
-#
-#   This plugin has been tested on a growing number of themes including:
-#   
-#    twentytwelve, twentyeleven, responsive, wp-foundation, required-foundation, neuro, Swtor_NeozOne_Wp, 
-#    lowermedia_one_page_theme, expound, customizr, sixteen, destro, swift basic
-#
-*/
+/**
+ *	This plugin is designed to work out of the box with any theme by adding a class to 
+ *	the menu container and then manipulating the HTML tag w/ said class by way of JS
+ *	
+ *	Plugins tested to work with this theme work a tad bit differently.  Instead of 
+ *	adding a class it uses custom js files that have the main navigational selectors 
+ *	already defined.  JS manipulates the menus by using the already defined tags. 
+ *
+ *
+ *   This plugin has been tested on a growing number of themes including:
+ *   
+ *    twentytwelve, twentyeleven, responsive, wp-foundation, required-foundation, neuro, Swtor_NeozOne_Wp, 
+ *    lowermedia_one_page_theme, expound, customizr, sixteen, destro, swift basic
+ *
+ */
 
 /**
  *
@@ -163,11 +163,11 @@ if ( ! class_exists( 'LowerMedia_Sticky_JS_Menus' ) ) :
 
 endif;
 
-/*############################################################################################
-#
-#   ADD ADMIN PAGE UNDER SETTINGS
-#   
-*/
+/**
+ *
+ *   ADD ADMIN PAGE UNDER SETTINGS
+ *   
+ */
 
 	class LowerMediaStickyAdminPage
 	{
