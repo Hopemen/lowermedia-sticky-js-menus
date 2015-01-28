@@ -3,8 +3,8 @@ Contributors: hawkeye126
 Donate link: http://lowermedia.net/
 Tags: js, sticky.js, multisite, navigation
 Requires at least: 3.0.1
-Tested up to: 3.9.1
-Stable tag: 3.0.0
+Tested up to: 4.1
+Stable tag: 3.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -143,6 +143,9 @@ Some theme styles or template styles may have overwritten the default styles, th
 *FEATURE: Option to disable stickyness at certain body width (hide on mobile)
 *FEATURE: Option to target additional html tag (div, nav, header, etc) by class or id
 
+= 3.1.0 =
+*Namespacing with Classes
+*PHP/JS code optimization
 
 == Upgrade Notice ==
 

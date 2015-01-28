@@ -135,6 +135,9 @@ Some theme styles or template styles may have overwritten the default styles, th
 *FEATURE: Option to disable stickyness at certain body width (hide on mobile)
 *FEATURE: Option to target additional html tag (div, nav, header, etc) by class or id
 
+= 3.1.0 =
+*Namespacing with Classes
+*PHP/JS code optimization
 
 == Upgrade Notice ==
 
