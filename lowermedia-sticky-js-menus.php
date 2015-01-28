@@ -27,129 +27,141 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 #
 */
 
-/*############################################################################################
-#
-#   SECURITY: BLOCK DIRECT ACCESS TO FILE
-#
-*/
+/**
+ *
+ *   SECURITY: BLOCK DIRECT ACCESS TO FILE
+ *
+ */
 
-defined('ABSPATH') or die("Cannot access pages directly.");
+    defined('ABSPATH') or die("Cannot access pages directly.");
 
+/**
+ *   ENQUEUE AND LOCALIZE
+ *   Enqueue our 'iFrame On Demand' script and localize the plugin path for local asset use
+ *
+ */
 
-/*############################################################################################
-#
-#   ADD STICKY JS FILES/LIBRARIES(STICKY.JS)
-#   //This function adds sticky javascript libraries and files
-#
-*/
+if ( ! class_exists( 'LowerMedia_Sticky_JS_Menus' ) ) :
 
-	function lowermedia_add_sticky_js()  
-	{  
-		//collect info about the theme to point to theme specific js files
-		$theme_data = wp_get_theme();
+    class LowerMedia_Sticky_JS_Menus {
 
-		//collect option info from wp-admin/options.php
-		$lmstickyjs_options = get_option( 'lmstickyjs_option_name' );
+        const version = '3.0.0';
 
-		//Some themes have been defined specifically as to what the primary nav wrapper will be, 
-		//for the themes still in flux we'll add a class to the nav, this class is used in run-sticky.js
-		if ($theme_data['Template']!='twentytwelve' 
-			&& $theme_data['Template']!='twentyeleven' 
-			&& $theme_data['Template']!='twentyten' 
-			&& $theme_data['Template']!='wp-foundation' 
-			&& $theme_data['Template']!='required-foundation' 
-			&& $theme_data['Template']!='responsive' 
-			&& $theme_data['Template']!='neuro' 
-			&& $theme_data['Template']!='Swtor_NeozOne_Wp' 
-			&& $theme_data['Template']!='lowermedia_one_page_theme'
-			&& $theme_data['Template']!='expound'
-			&& $theme_data['Template']!='sixteen'
-			&& $theme_data['Template']!='destro'
-			&& $theme_data['Template']!='attitude'
-			&& $theme_data['Template']!='spun'
-			&& $theme_data['Template']!='Isabelle'
-			&& $theme_data['Template']!='spacious'
-			&& $theme_data['Template']!='bushwick'
-			&& $theme_data['Template']!='one-page')
-		{
-			function my_wp_nav_menu_args( $args = '' )
-				{
-					$args['container'] = 'nav';
-					$args['container_class'] = 'lowermedia_add_sticky';
-					return $args;
-				}
-				add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
+        static function init() {
+
+            if ( is_admin() )
+                return;
+
+            add_action( 'wp_enqueue_scripts', self::add_scripts() );
+            add_filter('plugin_action_links', self::plugin_action_links(), 10, 2);
+            add_filter('the_content_more_link', self::remove_more_jump_link());
+
+			wp_localize_script( 'sticky', 'LMScriptParams', self::return_localization_information() );
+			wp_localize_script( 'run-sticky', 'LMScriptParams', self::return_localization_information() );
+
+			$theme_data = wp_get_theme();
+			//Some themes have been defined specifically as to what the primary nav wrapper will be, 
+			//for the themes still in flux we'll add a class to the nav, this class is used in run-sticky.js
+			if ($theme_data['Template']!='twentytwelve' 
+				&& $theme_data['Template']!='twentyeleven' 
+				&& $theme_data['Template']!='twentyten' 
+				&& $theme_data['Template']!='wp-foundation' 
+				&& $theme_data['Template']!='required-foundation' 
+				&& $theme_data['Template']!='responsive' 
+				&& $theme_data['Template']!='neuro' 
+				&& $theme_data['Template']!='Swtor_NeozOne_Wp' 
+				&& $theme_data['Template']!='lowermedia_one_page_theme'
+				&& $theme_data['Template']!='expound'
+				&& $theme_data['Template']!='sixteen'
+				&& $theme_data['Template']!='destro'
+				&& $theme_data['Template']!='attitude'
+				&& $theme_data['Template']!='spun'
+				&& $theme_data['Template']!='Isabelle'
+				&& $theme_data['Template']!='spacious'
+				&& $theme_data['Template']!='bushwick'
+				&& $theme_data['Template']!='one-page')
+			{
+				add_filter( 'wp_nav_menu_args', self::nav_append_container_and_class() );
+			}
+
+        }
+
+        static function add_scripts() {
+
+            wp_register_script( 'sticky', self::get_url( '/js/jquery.sticky.js' , __FILE__ ) , array( 'jquery' ), self::version, true);
+			wp_register_script( 'run-sticky', self::get_url( '/js/run-sticky.js' , __FILE__ ), array( 'sticky' ), self::version, true);
+			wp_enqueue_script( 'run-sticky' );
+
+        }
+
+        static function get_url( $path = '' ) {
+            return plugins_url( ltrim( $path, '/' ), __FILE__ );
+        }
+
+        static function nav_append_container_and_class( $args = '' ) {
+			$args['container'] = 'nav';
+			$args['container_class'] = 'lowermedia_add_sticky';
+			return $args;
 		}
 
-	    // Register and enque sticky.js - Sticky JS http://www.labs.anthonygarand.com/sticky - Anthony Garand anthonygarand.com
-		wp_register_script( 'sticky', plugins_url( '/js/jquery.sticky.js' , __FILE__ ) , array( 'jquery' ), '1.0.0', true);
-		wp_register_script( 'run-sticky', plugins_url( '/js/run-sticky.js' , __FILE__ ), array( 'sticky' ), '1.0.0', true);
-		wp_enqueue_script( 'run-sticky' );
+		static function return_localization_information() {
+
+			$theme_data = wp_get_theme();
+
+			//collect option info from wp-admin/options.php
+			$lmstickyjs_options = get_option( 'lmstickyjs_option_name' );
+
+			$params = array(
+			  'themename' => $theme_data['Template'],
+			  'stickytarget' => $lmstickyjs_options['lmstickyjs_class_selector'],
+			  'stickytargettwo' => $lmstickyjs_options['lmstickyjs_class_selector-two'],
+			  'disableatwidth' => $lmstickyjs_options['myfixed_disable_small_screen']
+			);
+
+			return $params;
+
+		}
+
+		static function plugin_action_links($links, $file) {
+		    static $this_plugin;
+
+		    if ( !$this_plugin ) {
+		        $this_plugin = plugin_basename(__FILE__);
+		    }
+
+		    if ( $file == $this_plugin ) {
+		        // The "page" query string value must be equal to the slug
+		        // of the Settings admin page we defined earlier, which in
+		        // this case equals "myplugin-settings".
+		        $settings_link = '<a href="' . get_bloginfo('wpurl') . '/wp-admin/nav-menus.php">Set Menu</a>';
+		        array_unshift($links, $settings_link);
+		        $settings_link = '<a href="' . get_bloginfo('wpurl') . '/wp-admin/options-general.php?page=lm-stickyjs-settings">Settings</a>';
+		        array_unshift($links, $settings_link);
+		    }
+
+		    return $links;
+		}
+
+		static function remove_more_jump_link($link) { 
+	
+			$offset = strpos($link, '#more-');
 		
-		$params = array(
-		  'themename' => $theme_data['Template'],
-		  'stickytarget' => $lmstickyjs_options['lmstickyjs_class_selector'],
-		  'stickytargettwo' => $lmstickyjs_options['lmstickyjs_class_selector-two'],
-		  'disableatwidth' => $lmstickyjs_options['myfixed_disable_small_screen']
-		);
-
+			if ($offset) {
+				$end = strpos($link, '"',$offset);
+			}
 		
-		wp_localize_script( 'sticky', 'LMScriptParams', $params );
-		wp_localize_script( 'run-sticky', 'LMScriptParams', $params );
-	}  
-	add_action( 'wp_enqueue_scripts', 'lowermedia_add_sticky_js' ); 
-
-/*############################################################################################
-#
-#   ADD SETTINGS LINK UNDER PLUGIN NAME ON PLUGIN PAGE
-#   
-*/
-
-	add_filter('plugin_action_links', 'lowermedia_plugin_action_links', 10, 2);
-
-	function lowermedia_plugin_action_links($links, $file) {
-	    static $this_plugin;
-
-	    if (!$this_plugin) {
-	        $this_plugin = plugin_basename(__FILE__);
-	    }
-
-	    if ($file == $this_plugin) {
-	        // The "page" query string value must be equal to the slug
-	        // of the Settings admin page we defined earlier, which in
-	        // this case equals "myplugin-settings".
-	        $settings_link = '<a href="' . get_bloginfo('wpurl') . '/wp-admin/nav-menus.php">Set Menu</a>';
-	        array_unshift($links, $settings_link);
-	        $settings_link = '<a href="' . get_bloginfo('wpurl') . '/wp-admin/options-general.php?page=lm-stickyjs-settings">Settings</a>';
-	        array_unshift($links, $settings_link);
-	    }
-
-	    return $links;
-	}
-
-/*############################################################################################
-#
-#   Remove More Jump Link
-#   
-*/
-
-	function lmstickyjs_remove_more_jump_link($link) 
-	{ 
-	
-		$offset = strpos($link, '#more-');
-	
-		if ($offset) {
-			$end = strpos($link, '"',$offset);
+			if ($end) {
+				$link = substr_replace($link, '', $offset, $end-$offset);
+			}
+		
+			return $link;
 		}
-	
-		if ($end) {
-			$link = substr_replace($link, '', $offset, $end-$offset);
-		}
-	
-		return $link;
-	}
-	
-	add_filter('the_content_more_link', 'lmstickyjs_remove_more_jump_link');
+
+    }
+
+    LowerMedia_Sticky_JS_Menus::init();
+
+endif;
 
 /*############################################################################################
 #
