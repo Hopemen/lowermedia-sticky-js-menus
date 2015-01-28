@@ -169,7 +169,9 @@ endif;
  *   
  */
 
-	class LowerMediaStickyAdminPage
+if ( ! class_exists( 'LowerMedia_Sticky_Admin_Page' ) ) :
+
+	class LowerMedia_Sticky_Admin_Page
 	{
 	    //field callback values
 	    private $options;
@@ -337,6 +339,10 @@ endif;
 		}
 		
 	}//END OF CLASS
-	if( is_admin() ) {$my_settings_page = new LowerMediaStickyAdminPage();}
-	// end plugin admin settings	
+
+	if( is_admin() ) {
+		$my_settings_page = new LowerMedia_Sticky_Admin_Page();
+	}
+
+endif;
 ?>
