@@ -12,9 +12,8 @@
 */
 
 jQuery(document).ready(function(){
-  jQuery('body').addClass('pete-runsticky');
-  jQuery('body').addClass(LMScriptParams.themename);
-  jQuery('body').addClass(LMScriptParams.disableatwidth);
+
+  jQuery('body').addClass(LMScriptParams.disableatwidth+' pete-runsticky '+LMScriptParams.themename);
 
   if (jQuery('body').width() > LMScriptParams.disableatwidth) {
     if(LMScriptParams.stickytarget)
