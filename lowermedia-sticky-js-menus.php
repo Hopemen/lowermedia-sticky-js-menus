@@ -72,14 +72,11 @@ if ( ! class_exists( 'LowerMedia_Sticky_JS_Menus' ) ) :
 		}
 
 		static function return_localization_information() {
-
-			$theme_data = wp_get_theme();
-
 			//collect option info from wp-admin/options.php
 			$lmstickyjs_options = get_option( 'lmstickyjs_option_name' );
 
 			$params = array(
-			  'themename' => $theme_data['Template'],
+			  'themename' => get_theme(),
 			  'stickytarget' => $lmstickyjs_options['lmstickyjs_class_selector'],
 			  'stickytargettwo' => $lmstickyjs_options['lmstickyjs_class_selector-two'],
 			  'disableatwidth' => $lmstickyjs_options['myfixed_disable_small_screen']
