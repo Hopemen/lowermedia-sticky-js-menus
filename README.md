@@ -3,7 +3,8 @@
 WordPress plugin that integrates sticky.js and makes your primary navigation menu sticky 
 (will 'stick' to top of screen when rolled over).
 
-== Description ==
+Description
+-----------
 
 WordPress plugin that integrates sticky.js and makes your primary navigation menu sticky 
 (will 'stick' to top of screen when rolled over).  
@@ -20,6 +21,7 @@ This plugin uses the <a href='http://stickyjs.com'>Sticky.js</a> script, props a
 
 
 More info:
+----------
 
 This plugin was designed to work out of the box with a large number of popular themes if not all
 the menu container and then manipulating the HTML tag w/ said class by way of JS
@@ -47,7 +49,8 @@ This plugin has been tested on a growing number of themes including: (will work 
    *Some CSS edits may be required
 
 
-== Installation ==
+Installation
+------------
 
 This section describes how to install the plugin and get it working.
 
@@ -82,7 +85,8 @@ Popular Themes Default Target List:
    wp-foundation = .top-nav
 
 
-== Frequently Asked Questions ==
+Frequently Asked Questions
+--------------------------
 
 = I am using one of the themes this plugin was tested to work on but it's not working. =
 
@@ -92,7 +96,8 @@ Please make sure your child theme has the same header navigation HTML syntax as 
 
 Some theme styles or template styles may have overwritten the default styles, the site owner may have to tweak their own css to for ideal display.
 
-== Changelog ==
+Changelog
+---------
 
 = 1.0 =
 *Plugin Launched
@@ -139,10 +144,12 @@ Some theme styles or template styles may have overwritten the default styles, th
 *Namespacing with Classes
 *PHP/JS code optimization
 
-== Upgrade Notice ==
+Upgrade Notice
+--------------
 
 Coming when needed
 
-== Screenshots ==
+Screenshots
+-----------
 
 Coming when needed
