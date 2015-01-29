@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: LowerMedia Sticky.js Menu's
+Plugin Name: LowerMedia Sticky.js Menus
 Plugin URI: http://lowermedia.net
 Description: WordPress plugin that integrates sticky.js and makes your primary navigation menu sticky (will 'stick' to top of screen when rolled over).  Activate and make your primary menu sticky!  Sticky means having your navigation always visible, the nav fixes itself to the top of the page.  This plugin uses the <a href='http://stickyjs.com'>Sticky.js</a> script, props and credit for creating that go to <a href="http://anthonygarand.com">Anthony Garand</a>, Thanks Anthony!   
 Version: 3.1.0
