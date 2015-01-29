@@ -47,14 +47,13 @@ if ( ! class_exists( 'LowerMedia_Sticky_JS_Menus' ) ) :
 
         const version = '3.1.0';
 
-        static function init() {
+        function __construct() {
 
             if ( is_admin() )
                 return;
 
+            add_filter('the_content_more_link', array( __CLASS__, 'remove_more_jump_link' ));
             add_action( 'wp_enqueue_scripts', self::add_scripts() );
-            add_filter('plugin_action_links', self::plugin_action_links(), 10, 2);
-            add_filter('the_content_more_link', self::remove_more_jump_link());
 
 			wp_localize_script( 'sticky', 'LMScriptParams', self::return_localization_information() );
 			wp_localize_script( 'run-sticky', 'LMScriptParams', self::return_localization_information() );
@@ -88,7 +87,7 @@ if ( ! class_exists( 'LowerMedia_Sticky_JS_Menus' ) ) :
 
         static function add_scripts() {
 
-            wp_register_script( 'sticky', self::get_url( '/js/jquery.sticky.js' , __FILE__ ) , array( 'jquery' ), self::version, true);
+   			wp_register_script( 'sticky', self::get_url( '/js/jquery.sticky.js' , __FILE__ ) , array( 'jquery' ), self::version, true);
 			wp_register_script( 'run-sticky', self::get_url( '/js/run-sticky.js' , __FILE__ ), array( 'sticky' ), self::version, true);
 			wp_enqueue_script( 'run-sticky' );
 
@@ -124,28 +123,6 @@ if ( ! class_exists( 'LowerMedia_Sticky_JS_Menus' ) ) :
 
 		}
 
-		static function plugin_action_links($links, $file) {
-
-		    static $this_plugin;
-
-		    if ( !$this_plugin ) {
-		        $this_plugin = plugin_basename(__FILE__);
-		    }
-
-		    if ( $file == $this_plugin ) {
-		        // The "page" query string value must be equal to the slug
-		        // of the Settings admin page we defined earlier, which in
-		        // this case equals "myplugin-settings".
-		        $settings_link = '<a href="' . get_bloginfo('wpurl') . '/wp-admin/nav-menus.php">Set Menu</a>';
-		        array_unshift($links, $settings_link);
-		        $settings_link = '<a href="' . get_bloginfo('wpurl') . '/wp-admin/options-general.php?page=lm-stickyjs-settings">Settings</a>';
-		        array_unshift($links, $settings_link);
-		    }
-
-		    return $links;
-
-		}
-
 		static function remove_more_jump_link($link) { 
 	
 			$offset = strpos($link, '#more-');
@@ -157,13 +134,14 @@ if ( ! class_exists( 'LowerMedia_Sticky_JS_Menus' ) ) :
 			if ($end) {
 				$link = substr_replace($link, '', $offset, $end-$offset);
 			}
-		
+
 			return $link;
 		}
 
     }
 
-    LowerMedia_Sticky_JS_Menus::init();
+    //LowerMedia_Sticky_JS_Menus::init();
+    $LowerMediaStickyJSMenus = new LowerMedia_Sticky_JS_Menus();
 
 endif;
 
@@ -184,7 +162,30 @@ if ( ! class_exists( 'LowerMedia_Sticky_Admin_Page' ) ) :
 	        add_action( 'admin_menu', array( $this, 'add_plugin_page' ) );
 	        add_action( 'admin_init', array( $this, 'page_init' ) );
 			add_action( 'admin_init', array( $this, 'lmstickyjs_default_options' ) );
+			add_filter('plugin_action_links_'.plugin_basename(__FILE__), array( $this , 'plugin_action_links' ), 10, 2);
 	    }
+
+	    static function plugin_action_links($links, $file) {
+
+		    static $this_plugin;
+
+		    if ( !$this_plugin ) {
+		        $this_plugin = plugin_basename(__FILE__);
+		    }
+
+		    if ( $file == $this_plugin ) {
+		        // The "page" query string value must be equal to the slug
+		        // of the Settings admin page we defined earlier, which in
+		        // this case equals "myplugin-settings".
+		        $settings_link = '<a href="' . get_bloginfo('wpurl') . '/wp-admin/nav-menus.php">Set Menu</a>';
+		        array_unshift($links, $settings_link);
+		        $settings_link = '<a href="' . get_bloginfo('wpurl') . '/wp-admin/options-general.php?page=lm-stickyjs-settings">Settings</a>';
+		        array_unshift($links, $settings_link);
+		    }
+
+		    return $links;
+
+		}
 
 	    //create options page
 	    public function add_plugin_page()
@@ -217,15 +218,8 @@ if ( ! class_exists( 'LowerMedia_Sticky_Admin_Page' ) ) :
 	            ?>
 	            <br/><br/>
 			        <center>
-			        I created this to save you time, for free :D It took some time, feel free to donate:<br/>
-			        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-					<input type="hidden" name="cmd" value="_s-xclick">
-					<input type="hidden" name="hosted_button_id" value="3S66QV3H7L49Y">
-					<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-					<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-					</form>
-					</center>
-	            </form>
+			        	<a href="http://lowermedia.net/donate/">I created this to save you time, for free :D It took some time, feel free to donate</a>
+			        </center>
 	        </div>
 	        <?php
 	    }
