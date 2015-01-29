@@ -45,54 +45,18 @@ if ( ! class_exists( 'LowerMedia_Sticky_JS_Menus' ) ) :
 
     class LowerMedia_Sticky_JS_Menus {
 
-        const version = '3.2.0';
+        const version = '3.1.0';
 
         function __construct() {
 
-            if ( is_admin() )
-                return;
-
             add_filter('the_content_more_link', array( __CLASS__, 'remove_more_jump_link' ));
             add_action( 'wp_enqueue_scripts', self::add_scripts() );
-
 			wp_localize_script( 'sticky', 'LMScriptParams', self::return_localization_information() );
-			wp_localize_script( 'run-sticky', 'LMScriptParams', self::return_localization_information() );
-
-			//add_filter( 'wp_nav_menu_args', array( __CLASS__, 'nav_append_container_and_class' ), 10);
-
-			//$theme_data = wp_get_theme();
-			//Some themes have been defined specifically as to what the primary nav wrapper will be, 
-			//for the themes still in flux we'll add a class to the nav, this class is used in run-sticky.js
-			// if ($theme_data['Template']!='twentytwelve' 
-			// 	&& $theme_data['Template']!='twentyeleven' 
-			// 	&& $theme_data['Template']!='twentyten' 
-			// 	&& $theme_data['Template']!='wp-foundation' 
-			// 	&& $theme_data['Template']!='required-foundation' 
-			// 	&& $theme_data['Template']!='responsive' 
-			// 	&& $theme_data['Template']!='neuro' 
-			// 	&& $theme_data['Template']!='Swtor_NeozOne_Wp' 
-			// 	&& $theme_data['Template']!='lowermedia_one_page_theme'
-			// 	&& $theme_data['Template']!='expound'
-			// 	&& $theme_data['Template']!='sixteen'
-			// 	&& $theme_data['Template']!='destro'
-			// 	&& $theme_data['Template']!='attitude'
-			// 	&& $theme_data['Template']!='spun'
-			// 	&& $theme_data['Template']!='Isabelle'
-			// 	&& $theme_data['Template']!='spacious'
-			// 	&& $theme_data['Template']!='bushwick'
-			// 	&& $theme_data['Template']!='one-page')
-			// {
-			// 	add_filter( 'wp_nav_menu_args', self::nav_append_container_and_class() );
-			// }
 
         }
 
         static function add_scripts() {
-
    			wp_register_script( 'sticky', self::get_url( '/js/jquery.sticky.js' , __FILE__ ) , array( 'jquery' ), self::version, true);
-			//wp_register_script( 'run-sticky', self::get_url( '/js/run-sticky.js' , __FILE__ ), array( 'sticky' ), self::version, true);
-			//wp_enqueue_script( 'run-sticky' );
-
         }
 
         static function get_url( $path = '' ) {
@@ -142,8 +106,9 @@ if ( ! class_exists( 'LowerMedia_Sticky_JS_Menus' ) ) :
 
     }
 
-    //LowerMedia_Sticky_JS_Menus::init();
-    $LowerMediaStickyJSMenus = new LowerMedia_Sticky_JS_Menus();
+    if ( !is_admin() ){
+    	$LowerMediaStickyJSMenus = new LowerMedia_Sticky_JS_Menus();
+    }
 
 endif;
 
