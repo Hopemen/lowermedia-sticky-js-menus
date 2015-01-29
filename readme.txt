@@ -1,5 +1,4 @@
-LowerMedia Sticky.js Menu's
-===========================
+=== LowerMedia Sticky.js Menu's ===
 Contributors: hawkeye126
 Donate link: http://lowermedia.net/
 Tags: js, sticky.js, multisite, navigation
@@ -12,8 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 WordPress plugin that integrates sticky.js and makes your primary navigation menu sticky 
 (will 'stick' to top of screen when rolled over).
 
-Description
------------
+== Description ==
 
 WordPress plugin that integrates sticky.js and makes your primary navigation menu sticky 
 (will 'stick' to top of screen when rolled over).  
