@@ -3,6 +3,8 @@
 WordPress plugin that integrates sticky.js and makes your primary navigation menu sticky 
 (will 'stick' to top of screen when rolled over).
 
+<a href="https://wordpress.org/plugins/lowermedia-sticky-js-menus/">WordPress Plugin Page</a>
+
 Description
 -----------
 
