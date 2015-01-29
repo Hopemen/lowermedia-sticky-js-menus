@@ -154,6 +154,10 @@ jQuery(document).ready(function(){
       gotwidth = '#page';//CHANGING VARIABLE LINE PER THEME
     }
 
+
+    
+
+
   //define a variable named defaults that will hold default css declarations
   var defaults = {
       topSpacing: 0,
@@ -219,6 +223,7 @@ jQuery(document).ready(function(){
 
             if (LMScriptParams.themename=='twentytwelve') {
               s.stickyElement.css('margin', '0');
+              s.stickyElement.css('width', s.stickyElement.parent().width() );
             }
 
             if (LMScriptParams.themename=='sixteen') {
