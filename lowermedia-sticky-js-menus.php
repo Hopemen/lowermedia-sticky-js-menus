@@ -45,7 +45,7 @@ if ( ! class_exists( 'LowerMedia_Sticky_JS_Menus' ) ) :
 
     class LowerMedia_Sticky_JS_Menus {
 
-        const version = '3.1.0';
+        const version = '3.2.0';
 
         function __construct() {
 
@@ -90,8 +90,8 @@ if ( ! class_exists( 'LowerMedia_Sticky_JS_Menus' ) ) :
         static function add_scripts() {
 
    			wp_register_script( 'sticky', self::get_url( '/js/jquery.sticky.js' , __FILE__ ) , array( 'jquery' ), self::version, true);
-			wp_register_script( 'run-sticky', self::get_url( '/js/run-sticky.js' , __FILE__ ), array( 'sticky' ), self::version, true);
-			wp_enqueue_script( 'run-sticky' );
+			//wp_register_script( 'run-sticky', self::get_url( '/js/run-sticky.js' , __FILE__ ), array( 'sticky' ), self::version, true);
+			//wp_enqueue_script( 'run-sticky' );
 
         }
 
