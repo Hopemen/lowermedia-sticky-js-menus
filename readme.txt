@@ -1,7 +1,7 @@
 === LowerMedia Sticky.js Menus ===
 Contributors: hawkeye126
 Donate link: http://lowermedia.net/
-Tags: js, sticky.js, multisite, navigation
+Tags: js, sticky.js, multisite, navigation, headers, jquery, menu
 Requires at least: 3.0.1
 Tested up to: 4.1
 Stable tag: 3.1.0
@@ -61,7 +61,7 @@ This section describes how to install the plugin and get it working.
 
 e.g.
 
-1. Upload `LowerMedia_sticky-js-menus.zip` in the wordpress dashboard upload plugin section or unzip the file and upload the directory to the `/wp-content/plugins/` directory
+1. Upload `LowerMedia_sticky-js-menus.zip` in the WordPress dashboard upload plugin section or unzip the file and upload the directory to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Make sure you have a menu defined under appearance -> menus
 
@@ -136,12 +136,12 @@ Some theme styles or template styles may have overwritten the default styles, th
 
 = 3.0.0 =
 *WILL NOW SUPPORT ALL THEMES WITH MINOR SETTINGS CONFIGURATION
-*SECURITY UPDATE: Block direct access to php file
+*SECURITY UPDATE: Block direct access to PHP file
 *FEATURE: Admin options area
 *FEATURE: Now works without setting primary menu
 *FEATURE: Option to set target div or nav (by class or id) to designate sticky.js target
 *FEATURE: Option to disable stickyness at certain body width (hide on mobile)
-*FEATURE: Option to target additional html tag (div, nav, header, etc) by class or id
+*FEATURE: Option to target additional HTML tag (div, nav, header, etc) by class or id
 
 = 3.1.0 =
 *Namespacing with Classes

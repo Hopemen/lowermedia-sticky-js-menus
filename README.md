@@ -58,7 +58,7 @@ This section describes how to install the plugin and get it working.
 
 e.g.
 
-1. Upload `LowerMedia_sticky-js-menus.zip` in the wordpress dashboard upload plugin section or unzip the file and upload the directory to the `/wp-content/plugins/` directory
+1. Upload `LowerMedia_sticky-js-menus.zip` in the WordPress dashboard upload plugin section or unzip the file and upload the directory to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Make sure you have a menu defined under appearance -> menus
 
