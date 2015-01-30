@@ -154,10 +154,6 @@ jQuery(document).ready(function(){
       gotwidth = '#page';//CHANGING VARIABLE LINE PER THEME
     }
 
-
-    
-
-
   //define a variable named defaults that will hold default css declarations
   var defaults = {
       topSpacing: 0,
@@ -207,8 +203,7 @@ jQuery(document).ready(function(){
           }
         }
         else {
-          var newTop = documentHeight - s.stickyElement.outerHeight()
-            - s.topSpacing - s.bottomSpacing - scrollTop - extra;
+          var newTop = documentHeight - s.stickyElement.outerHeight() - s.topSpacing - s.bottomSpacing - scrollTop - extra;
           if (newTop < 0) {
             newTop = newTop + s.topSpacing;
           } else {
@@ -229,11 +224,12 @@ jQuery(document).ready(function(){
             }
 
             if (LMScriptParams.themename=='sixteen') {
-              s.stickyElement.css('margin-left', '-120px');
+              s.stickyElement.css('left', '0');
+              s.stickyElement.css('right', '0');
             }
 
             if (LMScriptParams.themename=='destro') {
-              s.stickyElement.css('width', '94%');
+              s.stickyElement.css('width', '95%');
               s.stickyElement.css('max-width', '1122px');
             } else {
 
