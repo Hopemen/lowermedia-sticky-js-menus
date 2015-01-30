@@ -55,7 +55,7 @@ if ( ! class_exists( 'LowerMedia_Sticky_JS_Menus' ) ) :
         }
 
         static function add_scripts() {
-   			wp_register_script( 'sticky', self::get_url( '/js/jquery.sticky.js' , __FILE__ ) , array( 'jquery' ), self::version, true);
+   			wp_register_script( 'sticky', self::get_url( 'lowermedia.sticky.js' , __FILE__ ) , array( 'jquery' ), self::version, true);
    			wp_localize_script( 'sticky', 'LMScriptParams', self::return_localization_information() );
    			wp_enqueue_script( 'sticky' );
         }
