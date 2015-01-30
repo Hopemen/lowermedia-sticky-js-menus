@@ -8,13 +8,11 @@ Stable tag: 3.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Sticky Menus and Headers.  WordPress plugin that integrates sticky.js and makes your primary navigation menu and/or header sticky 
-(will 'stick' to top of screen when rolled over).
+Sticky Headers, Menus, Widgets, Anything!  WordPress plugin that integrates sticky.js and makes your primary navigation menu and/or header sticky (will 'stick' to top of screen when rolled over).  You can actually make html object sticky via plugin settings!
 
 == Description ==
 
-WordPress plugin that integrates sticky.js and makes your primary navigation menu and/or header sticky 
-(will 'stick' to top of screen when rolled over).  
+Sticky Headers, Menus, Widgets, Anything!  WordPress plugin that integrates sticky.js and makes your primary navigation menu and/or header sticky (will 'stick' to top of screen when rolled over).  You can actually make html object sticky via plugin settings! 
 
 Activate and make your primary menu sticky!  
 Sticky means having your navigation always visible, the nav fixes itself to the top of the page.  
@@ -37,6 +35,7 @@ adding a class it uses custom js files that have the main navigational selectors
 already defined.  JS manipulates the menus by using the already defined tags. 
 
 This plugin has been tested on a growing number of themes including: (will work with all themes with slight settings configuration)
+   twentyfourteen,
    twentythirteen, 
    twentytwelve, 
    twentyeleven, 
@@ -92,6 +91,10 @@ Popular Themes Default Target List:
 
 == Frequently Asked Questions ==
 
+= Can I make Widgets sticky? =
+
+Yes, you can make anything sticky! Set the widget's (or whatever else's) ID or Class in the primary or additional sticky object box setting on the under Settings -> Sticky.js Menus
+
 = I am using one of the themes this plugin was tested to work on but it's not working. =
 
 Please make sure your child theme has the same header navigation HTML syntax as the parent theme, this plugin is made to work with the latest iteration of the parent theme.
@@ -146,6 +149,7 @@ Some theme styles or template styles may have overwritten the default styles, th
 = 3.1.0 =
 *Namespacing with Classes
 *PHP/JS code optimization
+*Move all JS to one file, and out of js directory
 
 == Upgrade Notice ==
 
