@@ -11,12 +11,12 @@
 
 jQuery(document).ready(function(){
 
-  jQuery('body').addClass(LMScriptParams.disableatwidth+' pete-runsticky '+LMScriptParams.themename);
+  jQuery('body').addClass( LMScriptParams.disableatwidth + ' pete-runsticky ' + LMScriptParams.themename );
 
   if (jQuery('body').width() > LMScriptParams.disableatwidth) {
     if(LMScriptParams.stickytarget)
       {
-        jQuery('body').addClass('target-'+LMScriptParams.stickytarget);
+        jQuery('body').addClass( 'target-' + LMScriptParams.stickytarget );
         jQuery(LMScriptParams.stickytarget).sticky({ topSpacing: 0 });
       }
     else
@@ -118,34 +118,30 @@ jQuery(document).ready(function(){
 
 (function($) {
 
-  $('body').addClass('petejsclass');
-  console.log(LMScriptParams);
-  
-
   //  THIS IF STATEMENT DECIDES THE WIDTH OF THE STICKY NAV
   //  CONTAINER BASED ON THE DIV SPECIFIED
   var gotwidth;
-  if (LMScriptParams.themename=='responsive')
+  if ( LMScriptParams.themename == 'responsive' )
     {
       gotwidth = '#header';//CHANGING VARIABLE LINE PER THEME
     }
-  else if (LMScriptParams.themename=='twentytwelve' || LMScriptParams.themename=='required-foundation')
+  else if ( LMScriptParams.themename == 'twentytwelve' || LMScriptParams.themename == 'required-foundation' )
     {
       gotwidth = '.row';
     }
-  else if (LMScriptParams.themename=='sixteen' || LMScriptParams.themename=='spun')
+  else if ( LMScriptParams.themename == 'sixteen' || LMScriptParams.themename == 'spun' )
     {
       gotwidth = '';
     }
-  else if (LMScriptParams.themename=='attitude')
+  else if ( LMScriptParams.themename == 'attitude' )
     {
       gotwidth = '#wrapper';
     }
-  else if (LMScriptParams.themename=='destro')
+  else if ( LMScriptParams.themename == 'destro' )
     {
       gotwidth = '#content_section';
     }
-  else if (LMScriptParams.themename=='Isabelle')
+  else if ( LMScriptParams.themename == 'Isabelle' )
     {
       gotwidth = '.container';
     }
