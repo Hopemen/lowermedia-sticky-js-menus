@@ -50,13 +50,14 @@ if ( ! class_exists( 'LowerMedia_Sticky_JS_Menus' ) ) :
         function __construct() {
 
             add_filter('the_content_more_link', array( __CLASS__, 'remove_more_jump_link' ));
-            add_action( 'wp_enqueue_scripts', self::add_scripts() );
-			wp_localize_script( 'sticky', 'LMScriptParams', self::return_localization_information() );
+            add_action( 'wp_enqueue_scripts', array( __CLASS__, 'add_scripts' ) );
 
         }
 
         static function add_scripts() {
    			wp_register_script( 'sticky', self::get_url( '/js/jquery.sticky.js' , __FILE__ ) , array( 'jquery' ), self::version, true);
+   			wp_localize_script( 'sticky', 'LMScriptParams', self::return_localization_information() );
+   			wp_enqueue_script( 'sticky' );
         }
 
         static function get_url( $path = '' ) {
@@ -75,8 +76,10 @@ if ( ! class_exists( 'LowerMedia_Sticky_JS_Menus' ) ) :
 			//collect option info from wp-admin/options.php
 			$lmstickyjs_options = get_option( 'lmstickyjs_option_name' );
 
+			$theme_info = wp_get_theme();
+
 			$params = array(
-			  'themename' => get_theme(),
+			  'themename' => $theme_info['Template'],
 			  'stickytarget' => $lmstickyjs_options['lmstickyjs_class_selector'],
 			  'stickytargettwo' => $lmstickyjs_options['lmstickyjs_class_selector-two'],
 			  'disableatwidth' => $lmstickyjs_options['myfixed_disable_small_screen']
@@ -103,9 +106,8 @@ if ( ! class_exists( 'LowerMedia_Sticky_JS_Menus' ) ) :
 
     }
 
-    if ( !is_admin() ){
+    if ( !is_admin() )
     	$LowerMediaStickyJSMenus = new LowerMedia_Sticky_JS_Menus();
-    }
 
 endif;
 
@@ -301,9 +303,8 @@ if ( ! class_exists( 'LowerMedia_Sticky_Admin_Page' ) ) :
 		
 	}//END OF CLASS
 
-	if( is_admin() ) {
+	if( is_admin() )
 		$my_settings_page = new LowerMedia_Sticky_Admin_Page();
-	}
 
 endif;
 ?>
