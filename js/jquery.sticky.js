@@ -221,9 +221,11 @@ jQuery(document).ready(function(){
               .css('width', '')
               .css('z-index', '200');
 
+            s.stickyElement.css('width', s.stickyElement.parent().width() );
+
             if (LMScriptParams.themename=='twentytwelve') {
               s.stickyElement.css('margin', '0');
-              s.stickyElement.css('width', s.stickyElement.parent().width() );
+              //s.stickyElement.css('width', s.stickyElement.parent().width() );
             }
 
             if (LMScriptParams.themename=='sixteen') {
