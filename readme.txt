@@ -151,6 +151,7 @@ Some theme styles or template styles may have overwritten the default styles, th
 *PHP/JS code optimization
 *Move all JS to one file, and out of js directory
 *Reduce requests by 1
+*Minify JS
 
 == Upgrade Notice ==
 
